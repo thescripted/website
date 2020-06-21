@@ -1,0 +1,47 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  padding: 20px 20px 60px;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #000333;
+  opacity: 0.87;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 1em;
+}
+
+button {
+  border: 1px solid #ff8f87;
+  border-radius: 3px;
+  padding: 8px 12px;
+  background-color: transparent;
+  font-weight: 600;
+  color: #fff;
+}
+
+.intro-container {
+  width: 450px;
+}
+
+.media-container {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: space-between;
+}
+
+/* Test */
+.test {
+  height: 150vh;
+}
+
+.active-item {
+  opacity: 0.9 !important;
+}
