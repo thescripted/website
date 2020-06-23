@@ -1,7 +1,9 @@
 import { FancyNav } from "../components/FancyNav"
 import { TestContent } from "../components/TestContent"
-import { useState, useEffect } from "react"
 import { ProjectExample } from "../components/ProjectExample"
+import { MainNavBar } from "../components/MainNavBar"
+import { ContactBar } from "../components/ContactBar"
+import { useState, useEffect } from "react"
 
 const HomePage = () => {
   const [locations, setLocations] = useState({})
@@ -9,12 +11,12 @@ const HomePage = () => {
 
   const getGitHubRecentCommitMessages = async () => {
     let response = []
-    let data = await fetch(
-      "https://api.github.com/repos/thescripted/trello-markup/commits"
+    const data = await fetch(
+      "https://api.github.com/users/thescripted/repos"
     ).then(res => res.json())
     Object.entries(data)
       .slice(0, 3)
-      .map(item => response.push(item[1].commit.message))
+      .map(item => response.push(item[1].name))
     setGithubData(response)
   }
 
@@ -29,6 +31,7 @@ const HomePage = () => {
 
   return (
     <div className="main-container">
+      <MainNavBar />
       <div className="intro-container" id="Home">
         <div className="intro-copytext">
           <h1>Benjamin Kinga</h1>
@@ -36,14 +39,20 @@ const HomePage = () => {
             I am a JavaScript developer building applications with <b>React</b>,{" "}
             <b>Node</b>, and <b>PostgreSQL</b>.
           </p>
-          <button>resume</button>
+          <ContactBar />
+          <button>Resume</button>
         </div>
         <div className="intro-bio">
-          <img className="hero-image" src="example2.jpg" alt="My Photo" />
+          <div className="hero-image-wrapper">
+            <img className="hero-image" src="example2.jpg" alt="My Photo" />
+          </div>
           <div className="last-repositories">
-            {githubData.map(message => (
-              <p>{message}</p>
-            ))}
+            <i style={{ opacity: 0.3 }}>Latest Repository Updated ...</i>
+            <div className="latest-commits">
+              {githubData.map(message => (
+                <a href="/">{message}</a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -52,6 +61,7 @@ const HomePage = () => {
       </div>
       <div className="project-fields" id="Projects">
         <h1 className="header-link">Projects</h1>
+        <ProjectExample />
         <ProjectExample />
       </div>
     </div>

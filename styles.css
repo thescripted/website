@@ -6,7 +6,7 @@ body {
   padding: 20px 20px 60px;
   margin: 0 auto;
   color: #fff;
-  background-color: #222;
+  background-color: hsl(180, 64.9%, 6%);
   opacity: 0.78;
 }
 
@@ -24,12 +24,15 @@ a {
 }
 
 button {
-  border: 1px solid #fff;
+  cursor: pointer;
+  border: 1px solid hsl(150, 90%, 66%);
   border-radius: 3px;
-  padding: 8px 12px;
+  padding: 8px 42px;
   background-color: transparent;
-  font-weight: 600;
   color: #fff;
+  transition: 0.1s;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 16px;
 }
 
 .p20 {
@@ -44,9 +47,44 @@ button {
 .f18 {
   font-size: 18px;
 }
+.icon-sm {
+  width: 24px;
+  height: 24px;
+  filter: invert(100%) sepia(7%) saturate(0%) hue-rotate(82deg) brightness(110%)
+    contrast(106%);
+  opacity: 0.5;
+  transition: 0.1s;
+  cursor: pointer;
+}
+.icon-sm:hover {
+  opacity: 0.85;
+}
 /* Main CSS */
+
+.main-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 48px;
+}
+.main-navbar a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 30px;
+  transition: 0.1s;
+}
+
+.main-navbar a:hover {
+}
+
+.main-navbar a:last-child {
+  margin-left: 50px;
+}
+
 .main-container {
-  width: 850px;
+  width: 80%;
   margin: auto;
 }
 
@@ -66,34 +104,74 @@ button {
 .intro-copytext > h1 {
   font-size: 80px;
   line-height: 1em;
-  margin: 20px 0;
+  margin: 60px 0;
 }
 .intro-copytext > p {
   font-size: 30px;
-  margin: 20px 0;
+  margin: 60px 0;
   opacity: 0.8;
 }
 
 .intro-copytext > p > b {
-  color: #e13535;
+  color: hsl(150, 90%, 66%);
 }
 
 .intro-bio {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 20% 30px;
+  margin: 0 0 15% 30px;
 }
 .hero-image {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  margin: auto;
   width: 280px;
   height: 280px;
   border-radius: 50%;
+  opacity: 0.8;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px hsl(150, 90%, 66%);
   margin: 30px 0;
 }
 
 .hero-image img {
   max-height: 100%;
 }
+
+.latest-commits {
+  padding: 0 0 0 20px;
+}
+
+.latest-commits > a {
+  display: block;
+  padding: 6px 0;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: text-decoration 0.1s;
+}
+
+.latest-commits > a::before {
+  content: "\25B6";
+  font-size: 10px;
+  margin: 0 12px 0 0;
+  color: hsl(150, 90%, 66%);
+}
+
+.latest-commits > a:hover::after {
+  text-decoration: none;
+}
+.latest-commits > a:hover {
+  text-decoration: underline;
+}
+
 .media-container {
   display: flex;
   flex-direction: row;
@@ -154,6 +232,7 @@ button {
   display: flex;
   width: 100%;
   flex-direction: column;
+  margin: 80px 0;
 }
 
 .content-field {
@@ -204,4 +283,11 @@ button {
 
 .document-link:hover::after {
   margin: 0 20px;
+}
+
+.social-links {
+  display: flex;
+  margin: 50px 0;
+  width: 30%;
+  justify-content: space-between;
 }
