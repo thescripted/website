@@ -15,18 +15,20 @@ const HomePage = () => {
   return (
     <div className="main-container">
       <div className="intro-container" id="Home">
-        <h1>Benjamin Kinga</h1>
-        <p>
-          I am a Javascript developer building applications with <b>React</b>,{" "}
-          <b>Node</b>, and <b>PostgreSQL</b>.
-        </p>
-        <button>resume</button>
+        <div className="intro-copytext">
+          <h1>Benjamin Kinga</h1>
+          <p>
+            I am a JavaScript developer building applications with <b>React</b>,{" "}
+            <b>Node</b>, and <b>PostgreSQL</b>.
+          </p>
+          <button>resume</button>
+        </div>
       </div>
       <div>
         <FancyNav elementLocation={locations} />
       </div>
-      <div className="project-container" id="Projects">
-        Here are some of the projects I've built.
+      <div className="project-fields" id="Projects">
+        <h1 className="header-link">Projects</h1>
         <ProjectExample />
       </div>
     </div>

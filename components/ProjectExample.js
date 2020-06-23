@@ -6,18 +6,9 @@ export const ProjectExample = () => {
           <h1>Anonymous Message Service</h1>
         </div>
         <div className="content-field">
-          <div className="image-and-document-link">
-            <img
-              src="example1.jpg"
-              alt="FakeImage"
-              className="image-container"
-            />
-            <h2 className="p20">
-              <a href="/"> Link to Documentation</a>
-            </h2>
-          </div>
+          <img src="example1.jpg" alt="FakeImage" className="image-container" />
           <div className="copy-text">
-            <div className="text-blurb f24">
+            <div className="text-blurb f18">
               <p>
                 Titled, "Message In A Bottle", this web application allows
                 anyone to submit a message and allows anyone to read a message
@@ -34,6 +25,9 @@ export const ProjectExample = () => {
             </div>
           </div>
         </div>
+        <h2 className="document-link p20">
+          <a href="/"> Link to Documentation</a>
+        </h2>
       </div>
     </>
   )

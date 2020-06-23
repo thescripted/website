@@ -6,7 +6,7 @@ body {
   padding: 20px 20px 60px;
   margin: 0 auto;
   color: #fff;
-  background-color: #333;
+  background-color: #222;
   opacity: 0.78;
 }
 
@@ -18,6 +18,20 @@ p {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: 1px solid #fff;
+  border-radius: 3px;
+  padding: 8px 12px;
+  background-color: transparent;
+  font-weight: 600;
+  color: #fff;
+}
+
 .p20 {
   padding: 20px 0;
 }
@@ -27,23 +41,35 @@ p {
 .f24 {
   font-size: 24px;
 }
-
-button {
-  border: 1px solid #ff8f87;
-  border-radius: 3px;
-  padding: 8px 12px;
-  background-color: transparent;
-  font-weight: 600;
-  color: #fff;
+.f18 {
+  font-size: 18px;
 }
-
+/* Main CSS */
 .main-container {
-  width: 900px;
+  width: 850px;
   margin: auto;
 }
 
 .intro-container {
+  display: flex;
   width: 100%;
+  height: calc(100vh);
+  align-items: center;
+}
+
+.intro-copytext {
+  width: 60%;
+  margin-bottom: 20%;
+}
+
+.intro-copytext > h1 {
+  font-size: 80px;
+  line-height: 1em;
+  margin: 20px 0;
+}
+.intro-copytext > p {
+  font-size: 36px;
+  margin: 20px 0;
 }
 
 .media-container {
@@ -54,18 +80,14 @@ button {
 }
 
 .image-container {
-  width: 574px;
-  height: 322px;
+  width: 540px;
+  height: calc(540 * 9px / 16);
   opacity: 0.7;
+  border-radius: 5px;
 }
 
 .image-container img {
-  max-width: 100%;
   max-height: 100%;
-}
-.content-field a {
-  text-decoration: none;
-  color: #fff;
 }
 
 .image-container a:hover {
@@ -83,6 +105,28 @@ button {
   opacity: 0.9 !important;
 }
 
+.header-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-link::before {
+  content: "";
+  height: 1px;
+  width: 300px;
+  background-color: #fff;
+  display: block;
+  margin: 0 20px;
+}
+.header-link::after {
+  content: "";
+  height: 1px;
+  width: 300px;
+  background-color: #fff;
+  display: block;
+  margin: 0 20px;
+}
 /* Project Example */
 .project-container {
   display: flex;
@@ -96,6 +140,10 @@ button {
   justify-content: space-between;
 }
 
+.content-field a {
+  text-decoration: none;
+  color: #fff;
+}
 .copy-text {
   display: flex;
   flex-direction: column;
@@ -103,8 +151,10 @@ button {
 }
 
 .tech-stack {
+  margin: 80px 0 0;
   flex-grow: 1;
   text-align: right;
+  align-self: flex-end;
 }
 
 .tech-stack li {
@@ -116,5 +166,20 @@ button {
 .text-blurb {
   position: relative;
   top: 20px;
-  left: -20px;
+  width: 100%;
+  box-sizing: content-box;
+  left: -40px;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: hsla(0, 0%, 60%, 0.3);
+}
+
+.document-link::after {
+  content: "\2192";
+  transition: 0.3s;
+  margin: 0 10px;
+}
+
+.document-link:hover::after {
+  margin: 0 20px;
 }
