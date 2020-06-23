@@ -11,8 +11,7 @@ export const FancyNav = ({ elementLocation }) => {
 
   const [active, setActive] = useState({
     Home: true,
-    Projects: false,
-    Contact: false,
+    Projects: true,
   })
 
   const scrollEvent = () => {
@@ -31,11 +30,9 @@ export const FancyNav = ({ elementLocation }) => {
     }
   }, [])
 
-  let activeFlag = false
   let triggerState = {
     Home: false,
     Projects: false,
-    Contact: false,
   }
 
   useEffect(() => {
@@ -47,24 +44,12 @@ export const FancyNav = ({ elementLocation }) => {
         triggerState[DOMItem] = true
       } else if (DOMTop <= viewP.bottom && DOMBot >= viewP.bottom) {
         triggerState[DOMItem] = true
-      } else if (DOMTop <= viewP.top && DOMBot >= viewP.bottom) {
+      } else if (DOMTop >= viewP.top && DOMBot <= viewP.bottom) {
         triggerState[DOMItem] = true
       }
     })
-    console.log(triggerState)
     setActive(triggerState)
   }, [viewP])
-
-  // for (const item in elementLocation) {
-  //   let newItem = {}
-  //   if (item === "Home") {
-  //     newItem[item] = true
-  //     triggerState = {
-  //       ...triggerState,
-  //       ...newItem,
-  //     }
-  //   }
-  // }
 
   return (
     <>
@@ -80,12 +65,6 @@ export const FancyNav = ({ elementLocation }) => {
           className={`${styles.item} ${active.Projects ? "active-item" : null}`}
         >
           Projects
-        </a>
-        <a
-          href="#Contact"
-          className={`${styles.item} ${active.Contact ? "active-item" : null}`}
-        >
-          Contact
         </a>
       </div>
     </>

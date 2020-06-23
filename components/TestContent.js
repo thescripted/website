@@ -18,7 +18,7 @@ export const TestContent = ({ returnElementLocations }) => {
         Projects
       </div>
       <div className="test" id="Contact">
-        Contacts
+        Georgia Tech Sucks
       </div>
     </div>
   )

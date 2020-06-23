@@ -2,19 +2,30 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
-    "Arial", sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   padding: 20px 20px 60px;
   margin: 0 auto;
   color: #fff;
-  background-color: #000333;
-  opacity: 0.87;
+  background-color: #333;
+  opacity: 0.78;
 }
 
-h1 {
-  font-weight: 600;
-  font-size: 58px;
-  line-height: 1em;
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.p20 {
+  padding: 20px 0;
+}
+.f34 {
+  font-size: 34px;
+}
+.f24 {
+  font-size: 24px;
 }
 
 button {
@@ -26,8 +37,13 @@ button {
   color: #fff;
 }
 
+.main-container {
+  width: 900px;
+  margin: auto;
+}
+
 .intro-container {
-  width: 450px;
+  width: 100%;
 }
 
 .media-container {
@@ -37,11 +53,68 @@ button {
   justify-content: space-between;
 }
 
+.image-container {
+  width: 574px;
+  height: 322px;
+  opacity: 0.7;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.content-field a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.image-container a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
 /* Test */
 .test {
-  height: 150vh;
+  height: 250vh;
+  font-size: 64px;
 }
 
 .active-item {
   opacity: 0.9 !important;
+}
+
+/* Project Example */
+.project-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.content-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.copy-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tech-stack {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.tech-stack li {
+  list-style: none;
+  display: list-item;
+  list-style-position: inside;
+}
+
+.text-blurb {
+  position: relative;
+  top: 20px;
+  left: -20px;
 }

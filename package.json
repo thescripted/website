@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "next start",
     "build": "next build",
+    "buildcss": "tailwindcss build styles.css -o generated.css",
     "dev": "next dev"
   },
   "keywords": [],
@@ -15,7 +16,8 @@
   "dependencies": {
     "next": "^9.4.4",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "tailwindcss": "^1.4.6"
   },
   "devDependencies": {
     "prettier": "^2.0.5"
