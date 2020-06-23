@@ -5,13 +5,28 @@ import { ProjectExample } from "../components/ProjectExample"
 
 const HomePage = () => {
   const [locations, setLocations] = useState({})
+  const [githubData, setGithubData] = useState([])
+
+  const getGitHubRecentCommitMessages = async () => {
+    let response = []
+    let data = await fetch(
+      "https://api.github.com/repos/thescripted/trello-markup/commits"
+    ).then(res => res.json())
+    Object.entries(data)
+      .slice(0, 3)
+      .map(item => response.push(item[1].commit.message))
+    setGithubData(response)
+  }
+
   useEffect(() => {
     const elementLocation = {
       Home: document.getElementById("Home").getBoundingClientRect(),
       Projects: document.getElementById("Projects").getBoundingClientRect(),
     }
     setLocations(elementLocation)
+    getGitHubRecentCommitMessages()
   }, [])
+
   return (
     <div className="main-container">
       <div className="intro-container" id="Home">
@@ -22,6 +37,14 @@ const HomePage = () => {
             <b>Node</b>, and <b>PostgreSQL</b>.
           </p>
           <button>resume</button>
+        </div>
+        <div className="intro-bio">
+          <img className="hero-image" src="example2.jpg" alt="My Photo" />
+          <div className="last-repositories">
+            {githubData.map(message => (
+              <p>{message}</p>
+            ))}
+          </div>
         </div>
       </div>
       <div>
