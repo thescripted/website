@@ -37,8 +37,8 @@ export const FancyNav = ({ elementLocation }) => {
 
   useEffect(() => {
     Object.entries(elementLocation).map(item => {
-      const DOMTop = item[1].top
-      const DOMBot = item[1].bottom
+      const DOMTop = item[1].top + 20 // A little hackey. TODO: Update Dom calculations
+      const DOMBot = item[1].bottom - 20
       const DOMItem = item[0]
       if (DOMTop <= viewP.top && DOMBot >= viewP.top) {
         triggerState[DOMItem] = true

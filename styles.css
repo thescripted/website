@@ -7,7 +7,7 @@ body {
   margin: 0 auto;
   color: #fff;
   background-color: hsl(180, 64.9%, 6%);
-  opacity: 0.78;
+  opacity: 0.87;
 }
 
 h1,
@@ -114,6 +114,7 @@ button {
 
 .intro-copytext > p > b {
   color: hsl(150, 90%, 66%);
+  opacity: 1;
 }
 
 .intro-bio {
@@ -184,6 +185,7 @@ button {
   height: calc(540 * 9px / 16);
   opacity: 0.7;
   border-radius: 5px;
+  z-index: -1;
 }
 
 .image-container img {
@@ -232,9 +234,23 @@ button {
   display: flex;
   width: 100%;
   flex-direction: column;
-  margin: 80px 0;
+  margin: 40px 0;
 }
 
+.header-field {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.header-field > p {
+  opacity: 0.5;
+  flex-grow: 1;
+  text-align: right;
+}
+.link-outside {
+  margin: 0 20px;
+}
 .content-field {
   display: flex;
   flex-direction: row;
@@ -252,16 +268,18 @@ button {
 }
 
 .tech-stack {
-  margin: 80px 0 0;
+  margin: 80px 20px 0;
   flex-grow: 1;
-  text-align: right;
-  align-self: flex-end;
+}
+.tech-stack ul {
+  padding: 0;
 }
 
 .tech-stack li {
+  padding: 0 40px 0 0;
   list-style: none;
-  display: list-item;
-  list-style-position: inside;
+  display: inline-block;
+  color: hsl(150, 90%, 66%);
 }
 
 .text-blurb {
@@ -274,15 +292,35 @@ button {
   padding: 20px;
   background-color: hsla(0, 0%, 60%, 0.3);
 }
+.text-blurb-left {
+  position: relative;
+  top: 20px;
+  width: 100%;
+  box-sizing: content-box;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: hsla(0, 0%, 60%, 0.3);
+  z-index: 1;
+}
+.document-link {
+  width: 50%;
+}
+
+.document-left {
+  position: relative;
+  left: 45%; /* TODO: make document-left align with image */
+}
 
 .document-link::after {
   content: "\2192";
   transition: 0.3s;
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .document-link:hover::after {
   margin: 0 20px;
+  color: hsl(150, 90%, 66%);
 }
 
 .social-links {
