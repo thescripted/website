@@ -13,6 +13,12 @@ export const ProjectExampleLeft = () => {
           data-aos="fade-down"
           data-aos-delay="200"
         >
+          <img
+            src="example1.jpg"
+            alt="FakeImage"
+            className="image-container image-top"
+            id="left-image-source"
+          />
           <div className="copy-text" data-aos="fade-down" data-aos-delay="650">
             <div className="text-blurb-left f18">
               <p>
@@ -38,7 +44,7 @@ export const ProjectExampleLeft = () => {
           <img
             src="example1.jpg"
             alt="FakeImage"
-            className="image-container"
+            className="image-container image-bot"
             id="left-image-source"
           />
         </div>

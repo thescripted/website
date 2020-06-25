@@ -8,7 +8,7 @@
     "start": "next start",
     "export": "next export",
     "build": "next build",
-    "buildcss": "tailwindcss build styles.css -o generated.css",
+    "buildcss": "tailwindcss build styles.css -0 generated.css",
     "dev": "next dev"
   },
   "keywords": [],
@@ -17,8 +17,7 @@
   "dependencies": {
     "next": "^9.4.4",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "tailwindcss": "^1.4.6"
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "prettier": "^2.0.5"
