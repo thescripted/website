@@ -4,6 +4,9 @@ import { ProjectExample } from "../components/ProjectExample"
 import { ProjectExampleLeft } from "../components/ProjectExampleLeft"
 import { MainNavBar } from "../components/MainNavBar"
 import { ContactBar } from "../components/ContactBar"
+import { ContactField } from "../components/ContactField"
+import { Footer } from "../components/Footer"
+
 import { useState, useEffect } from "react"
 import Head from "next/head"
 
@@ -18,7 +21,13 @@ const HomePage = () => {
     ).then(res => res.json())
     Object.entries(data)
       .slice(0, 3)
-      .map(item => response.push(item[1].name))
+      .map(item => {
+        response.push({
+          key: item[1].id,
+          name: item[1].name,
+          url: item[1].html_url,
+        })
+      })
     setGithubData(response)
   }
 
@@ -26,6 +35,7 @@ const HomePage = () => {
     const elementLocation = {
       Home: document.getElementById("Home").getBoundingClientRect(), //Todo: Update Calcuations
       Projects: document.getElementById("Projects").getBoundingClientRect(),
+      Contact: document.getElementById("Contact").getBoundingClientRect(),
     }
     setLocations(elementLocation)
     getGitHubRecentCommitMessages()
@@ -46,17 +56,21 @@ const HomePage = () => {
               <b>React</b>, <b>Node</b>, and <b>PostgreSQL</b>.
             </p>
             <ContactBar />
-            <button>Contact Me</button>
+            <a href="mailto:bk527@cornell.edu">
+              <button>Contact Me</button>
+            </a>
           </div>
           <div className="intro-bio">
             <div className="hero-image-wrapper">
-              <img className="hero-image" src="example2.jpg" alt="My Photo" />
+              <img className="hero-image" src="Obama.jpg" alt="My Photo" />
             </div>
             <div className="last-repositories">
               <i style={{ opacity: 0.3 }}>Latest Repository Updated ...</i>
               <div className="latest-commits">
-                {githubData.map(message => (
-                  <a href="/">{message}</a>
+                {githubData.map(data => (
+                  <a href={data.url} key={data.key}>
+                    {data.name}
+                  </a>
                 ))}
               </div>
             </div>
@@ -70,6 +84,8 @@ const HomePage = () => {
           <ProjectExample />
           <ProjectExampleLeft />
         </div>
+        <ContactField />
+        <Footer />
       </div>
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script>AOS.init();</script>

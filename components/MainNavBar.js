@@ -3,9 +3,9 @@ export const MainNavBar = props => {
     <div className="main-navbar">
       <a href="#Home">Home</a>
       <a href="#Projects">Projects</a>
-      <a href="/">Contact</a>
-      <a href="/">Blog</a>
-      <a href="/">
+      <a href="#Contact">Contact</a>
+      {/* <a href="/">Blog</a> */}
+      <a href="Benjamin-Kinga__Resume.pdf">
         <button>Resume</button>
       </a>
     </div>

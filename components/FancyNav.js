@@ -11,7 +11,8 @@ export const FancyNav = ({ elementLocation }) => {
 
   const [active, setActive] = useState({
     Home: true,
-    Projects: true,
+    Projects: false,
+    Contact: false,
   })
 
   const scrollEvent = () => {
@@ -33,6 +34,7 @@ export const FancyNav = ({ elementLocation }) => {
   let triggerState = {
     Home: false,
     Projects: false,
+    Contact: false,
   }
 
   useEffect(() => {
@@ -65,6 +67,12 @@ export const FancyNav = ({ elementLocation }) => {
           className={`${styles.item} ${active.Projects ? "active-item" : null}`}
         >
           Projects
+        </a>
+        <a
+          href="#Contact"
+          className={`${styles.item} ${active.Contact ? "active-item" : null}`}
+        >
+          Contact
         </a>
       </div>
     </>
