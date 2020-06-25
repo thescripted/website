@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "next start",
+    "export": "next export",
     "build": "next build",
     "buildcss": "tailwindcss build styles.css -o generated.css",
     "dev": "next dev"
