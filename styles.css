@@ -92,7 +92,7 @@ button {
 .intro-container {
   display: flex;
   width: 100%;
-  height: calc(100vh);
+  height: 100vh;
   align-items: center;
   justify-content: space-between;
 }
@@ -351,4 +351,26 @@ button {
   z-index: 2;
   text-align: center;
   opacity: 0.5;
+}
+
+/* Responsive Baby */
+@media (max-width: 900px) {
+  .main-navbar {
+    height: 36px;
+  }
+  /* .main-navbar a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 30px;
+  transition: 0.1s;
+} */
+
+  .main-navbar a:last-child {
+    margin-left: 0;
+  }
+  .intro-container {
+    flex-direction: column;
+    height: inherit;
+  }
 }

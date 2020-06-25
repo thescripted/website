@@ -52,7 +52,7 @@ const HomePage = () => {
           <div className="intro-copytext">
             <h1>Benjamin Kinga</h1>
             <p>
-              I am a JavaScript developer building applications with{" "}
+              I am a JavaScript developer currently building applications with{" "}
               <b>React</b>, <b>Node</b>, and <b>PostgreSQL</b>.
             </p>
             <ContactBar />
