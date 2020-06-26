@@ -192,6 +192,10 @@ button {
   opacity: 0.7;
   border-radius: 5px;
   z-index: -1;
+  transition: 0.1s;
+}
+.image-container:hover {
+  opacity: 0.9;
 }
 
 .image-container img {
@@ -403,6 +407,7 @@ button {
     flex-direction: column;
     align-items: center;
   }
+
   .text-blurb {
     left: 0;
     box-sizing: border-box;
@@ -461,7 +466,7 @@ button {
   }
 }
 
-@media (min-width: 400px) {
+@media (max-width: 400px) {
   /* Why are you using a phone this small?!?! */
   .image-container {
     width: 375px;

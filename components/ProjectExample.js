@@ -18,12 +18,14 @@ export const ProjectExample = () => {
           data-aos="fade-down"
           data-aos-delay="200"
         >
-          <img
-            src="example1.jpg"
-            alt="FakeImage"
-            className="image-container"
-            id="image-source"
-          />
+          <a href="https://messagebottle.netlify.app">
+            <img
+              src="Message.PNG"
+              alt="FakeImage"
+              className="image-container"
+              id="image-source"
+            />
+          </a>
           <div className="copy-text" data-aos="fade-down" data-aos-delay="650">
             <div className="text-blurb f18">
               <p>

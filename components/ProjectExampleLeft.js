@@ -13,20 +13,20 @@ export const ProjectExampleLeft = () => {
           data-aos="fade-down"
           data-aos-delay="200"
         >
-          <img
-            src="example1.jpg"
-            alt="FakeImage"
-            className="image-container image-top"
-            id="left-image-source"
-          />
+          <a href="https://www.google.com">
+            <img
+              src="example1.jpg"
+              alt="FakeImage"
+              className="image-container image-top"
+              id="left-image-source"
+            />
+          </a>
           <div className="copy-text" data-aos="fade-down" data-aos-delay="650">
             <div className="text-blurb-left f18">
               <p>
                 Trello Copywork is a functional redesign of Trello.com. It
                 consists of the major actions that can be done with Trello, such
-                as adding notes, removing notes, and writing to a database.
-                Additionally, User Authentication is taken care of, as well as
-                data normalization and client-side caching.
+                as adding notes, draggable components, and user authentication.
               </p>
             </div>
             <div className="tech-stack">
@@ -41,12 +41,14 @@ export const ProjectExampleLeft = () => {
               </ul>
             </div>
           </div>
-          <img
-            src="example1.jpg"
-            alt="FakeImage"
-            className="image-container image-bot"
-            id="left-image-source"
-          />
+          <a>
+            <img
+              src="Trello.PNG"
+              alt="FakeImage"
+              className="image-container image-bot"
+              id="left-image-source"
+            />
+          </a>
         </div>
         <h2
           className="document-link document-left p20"
