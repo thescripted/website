@@ -15,7 +15,7 @@ export const ProjectExampleLeft = () => {
         >
           <a>
             <img
-              src="example1.jpg"
+              src="Trello.PNG"
               alt="FakeImage"
               className="image-container image-top"
               id="left-image-source"
