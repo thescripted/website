@@ -56,7 +56,7 @@ export const ProjectExampleLeft = () => {
         >
           <a href="https://www.github.com/thescripted/trello-markup">
             {" "}
-            Link to Documentation
+            Link to Repository
           </a>
         </h2>
       </div>

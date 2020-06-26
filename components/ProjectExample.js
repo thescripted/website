@@ -54,7 +54,7 @@ export const ProjectExample = () => {
         >
           <a href="https://www.github.com/thescripted/message-bottle-client">
             {" "}
-            Link to Documentation
+            Link to Repository
           </a>
         </h2>
       </div>
