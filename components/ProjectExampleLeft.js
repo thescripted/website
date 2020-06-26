@@ -13,7 +13,7 @@ export const ProjectExampleLeft = () => {
           data-aos="fade-down"
           data-aos-delay="200"
         >
-          <a href="https://www.google.com">
+          <a>
             <img
               src="example1.jpg"
               alt="FakeImage"

@@ -44,6 +44,7 @@ const HomePage = () => {
   return (
     <>
       <Head>
+        <title>Benjamin Kinga</title>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
       </Head>
       <div className="main-container">
