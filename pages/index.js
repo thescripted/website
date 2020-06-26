@@ -10,26 +10,29 @@ import { Footer } from "../components/Footer"
 import { useState, useEffect } from "react"
 import Head from "next/head"
 
-const HomePage = () => {
-  const [locations, setLocations] = useState({})
-  const [githubData, setGithubData] = useState([])
-
-  const getGitHubRecentCommitMessages = async () => {
-    let response = []
-    const data = await fetch(
-      "https://api.github.com/users/thescripted/repos"
-    ).then(res => res.json())
-    Object.entries(data)
-      .slice(0, 3)
-      .map(item => {
-        response.push({
-          key: item[1].id,
-          name: item[1].name,
-          url: item[1].html_url,
-        })
+export async function getStaticProps() {
+  const posts = []
+  const response = await fetch(
+    "https://api.github.com/users/thescripted/repos"
+  ).then(res => res.json())
+  Object.entries(response)
+    .slice(0, 3)
+    .map(item => {
+      posts.push({
+        key: item[1].id,
+        name: item[1].name,
+        url: item[1].html_url,
       })
-    setGithubData(response)
+    })
+  return {
+    props: {
+      posts,
+    },
   }
+}
+
+const HomePage = ({ posts }) => {
+  const [locations, setLocations] = useState({})
 
   useEffect(() => {
     const elementLocation = {
@@ -38,7 +41,8 @@ const HomePage = () => {
       Contact: document.getElementById("Contact").getBoundingClientRect(),
     }
     setLocations(elementLocation)
-    getGitHubRecentCommitMessages()
+    // getGitHubRecentCommitMessages()
+    console.log(posts)
   }, [])
 
   return (
@@ -68,9 +72,9 @@ const HomePage = () => {
             <div className="last-repositories">
               <i style={{ opacity: 0.3 }}>Latest Repository Updated ...</i>
               <div className="latest-commits">
-                {githubData.map(data => (
-                  <a href={data.url} key={data.key}>
-                    {data.name}
+                {posts.map(post => (
+                  <a href={post.url} key={post.key}>
+                    {post.name}
                   </a>
                 ))}
               </div>
