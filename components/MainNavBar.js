@@ -18,9 +18,9 @@ export const MainNavBar = props => {
       <a href="#Projects">Projects</a>
       <a href="#Contact">Contact</a>
       {/* <a href="/">Blog</a> */}
-      <a href="#" className="icon" onClick={handleNavigation}>
+      {/* <a href="#" className="icon" onClick={handleNavigation}>
         <img src="hamburger.svg" />
-      </a>
+      </a> */}
       <a href="Benjamin-Kinga__Resume.pdf">
         <button>Resume</button>
       </a>

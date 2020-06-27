@@ -27,7 +27,7 @@ export const ProjectExample = () => {
             />
           </a>
           <div className="copy-text" data-aos="fade-down" data-aos-delay="650">
-            <div className="text-blurb f18">
+            <div className="text-blurb f18 l40">
               <p>
                 Titled, "Message In A Bottle", this web application allows
                 anyone to submit a message and allows anyone to read a message

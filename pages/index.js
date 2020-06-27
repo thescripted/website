@@ -42,7 +42,6 @@ const HomePage = ({ posts }) => {
     }
     setLocations(elementLocation)
     // getGitHubRecentCommitMessages()
-    console.log(posts)
   }, [])
 
   return (

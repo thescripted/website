@@ -17,12 +17,12 @@ export const ProjectExampleLeft = () => {
             <img
               src="Trello.PNG"
               alt="FakeImage"
-              className="image-container image-top"
+              className="image-container image-top z0"
               id="left-image-source"
             />
           </a>
           <div className="copy-text" data-aos="fade-down" data-aos-delay="650">
-            <div className="text-blurb-left f18">
+            <div className="text-blurb f18">
               <p>
                 Trello Copywork is a functional redesign of Trello.com. It
                 consists of the major actions that can be done with Trello, such
