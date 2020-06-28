@@ -1,11 +1,11 @@
-import { FancyNav } from "../components/FancyNav"
-import { TestContent } from "../components/TestContent"
-import { ProjectExample } from "../components/ProjectExample"
-import { ProjectExampleLeft } from "../components/ProjectExampleLeft"
-import { MainNavBar } from "../components/MainNavBar"
-import { ContactBar } from "../components/ContactBar"
-import { ContactField } from "../components/ContactField"
-import { Footer } from "../components/Footer"
+import { FancyNav } from "@components/FancyNav"
+import { TestContent } from "@components/TestContent"
+import { ProjectExample } from "@components/ProjectExample"
+import { ProjectExampleLeft } from "@components/ProjectExampleLeft"
+import { MainNavBar } from "@components/MainNavBar"
+import { ContactBar } from "@components/ContactBar"
+import { ContactField } from "@components/ContactField"
+import { Footer } from "@components/Footer"
 
 import { useState, useEffect } from "react"
 import Head from "next/head"
@@ -36,9 +36,11 @@ const HomePage = ({ posts }) => {
 
   useEffect(() => {
     const elementLocation = {
-      Home: document.getElementById("Home").getBoundingClientRect(), //Todo: Update Calcuations
+      Home: document.getElementById("Home").getBoundingClientRect(),
       Projects: document.getElementById("Projects").getBoundingClientRect(),
       Contact: document.getElementById("Contact").getBoundingClientRect(),
+      // getBoundingClientRect is relative to the viewport. This offset adjusts the correct locations in case the user refreshes the page halfway down.
+      offset: window.pageYOffset,
     }
     setLocations(elementLocation)
     // getGitHubRecentCommitMessages()

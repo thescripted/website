@@ -15,6 +15,8 @@ export const FancyNav = ({ elementLocation }) => {
     Contact: false,
   })
 
+  const [offset, setOffset] = useState(0)
+
   const scrollEvent = () => {
     setViewP({
       top: window.scrollY,
@@ -23,6 +25,10 @@ export const FancyNav = ({ elementLocation }) => {
       right: window.innerWidth + window.scrollX,
     })
   }
+  useEffect(() => {
+    setOffset(elementLocation.offset)
+    console.log(offset)
+  }, [offset])
 
   useEffect(() => {
     window.addEventListener("scroll", scrollEvent)
@@ -39,8 +45,8 @@ export const FancyNav = ({ elementLocation }) => {
 
   useEffect(() => {
     Object.entries(elementLocation).map(item => {
-      const DOMTop = item[1].top + 20 // A little hackey. TODO: Update Dom calculations
-      const DOMBot = item[1].bottom - 20
+      const DOMTop = item[1].top + offset
+      const DOMBot = item[1].bottom + offset
       const DOMItem = item[0]
       if (DOMTop <= viewP.top && DOMBot >= viewP.top) {
         triggerState[DOMItem] = true
