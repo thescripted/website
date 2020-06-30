@@ -11,14 +11,14 @@ import { useState, useEffect } from "react"
 import Head from "next/head"
 
 export async function getStaticProps() {
-  const posts = []
+  const repos = []
   const response = await fetch(
     "https://api.github.com/users/thescripted/repos"
   ).then(res => res.json())
   Object.entries(response)
     .slice(0, 3)
     .map(item => {
-      posts.push({
+      repos.push({
         key: item[1].id,
         name: item[1].name,
         url: item[1].html_url,
@@ -26,12 +26,12 @@ export async function getStaticProps() {
     })
   return {
     props: {
-      posts,
+      repos,
     },
   }
 }
 
-const HomePage = ({ posts }) => {
+const HomePage = ({ repos }) => {
   const [locations, setLocations] = useState({})
 
   useEffect(() => {
@@ -73,9 +73,9 @@ const HomePage = ({ posts }) => {
             <div className="last-repositories">
               <i style={{ opacity: 0.3 }}>Latest Repository Updated ...</i>
               <div className="latest-commits">
-                {posts.map(post => (
-                  <a href={post.url} key={post.key}>
-                    {post.name}
+                {repos.map(repos => (
+                  <a href={repos.url} key={repos.key}>
+                    {repos.name}
                   </a>
                 ))}
               </div>

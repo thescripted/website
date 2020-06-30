@@ -15,9 +15,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "gray-matter": "^4.0.2",
     "next": "^9.4.4",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1"
   },
   "devDependencies": {
     "prettier": "^2.0.5"
