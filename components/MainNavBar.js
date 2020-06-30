@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Link from "next/link"
 
 export const MainNavBar = props => {
   const handleNavigation = () => {
@@ -17,6 +18,9 @@ export const MainNavBar = props => {
       <a href="#Home">Home</a>
       <a href="#Projects">Projects</a>
       <a href="#Contact">Contact</a>
+      <Link href="/blog">
+        <a>Blog</a>
+      </Link>
       {/* <a href="/">Blog</a> */}
       {/* <a href="#" className="icon" onClick={handleNavigation}>
         <img src="hamburger.svg" />
