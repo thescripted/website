@@ -55,8 +55,7 @@ export const ProjectExample = () => {
           data-aos-delay="650"
         >
           <a href="https://www.github.com/thescripted/message-bottle-client">
-            {" "}
-            Link to Repository
+            Repository
           </a>
         </h2>
       </div>
