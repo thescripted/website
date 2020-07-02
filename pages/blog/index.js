@@ -1,9 +1,31 @@
 import Link from "next/link"
 import { posts } from "@components/posts"
 import { formatTitleURLParam } from "../../support"
+import * as matter from "gray-matter"
+import fs from "fs"
+import path from "path"
 
+export async function getStaticProps() {
+  let metadata = []
+  const postsDirectory = path.join(process.cwd(), "public/posts")
+  const postsNames = fs.readdirSync(postsDirectory)
+  const posts = postsNames.map(post => {
+    const filePath = path.join(process.cwd(), `public/posts/${post}`)
+    const fileContent = fs.readFileSync(filePath, "utf-8")
+    const meta = matter(fileContent).data
+
+    metadata.push(meta)
+  })
+
+  return {
+    props: {
+      metadata,
+    },
+  }
+}
 // TODO: Normalize Navbar across Blog and Home Page.
-export default function Blog() {
+export default function Blog({ metadata }) {
+  console.log(metadata)
   return (
     <>
       <div className="navbar">
@@ -14,19 +36,22 @@ export default function Blog() {
         </span>
       </div>
       <div className="container">
-        <h2>Hi, There.</h2>
+        <h2>Personal Blog</h2>
         <p>
           This will be the landing page for my blog. You will see all the links
           you can click in here.
         </p>
         <ul>
-          {posts.map(post => (
-            <li key={post.id}>
+          {metadata.map(meta => (
+            <li key={meta.id}>
               <Link
-                href="/blog/[postname]"
-                as={`/blog/${formatTitleURLParam(post.title)}`}
+                href="/blog/[postname"
+                as={`/blog/${formatTitleURLParam(meta.title)}`}
               >
-                <a>{post.title}</a>
+                <div className="item">
+                  <a>{meta.title}</a>
+                  <p>{meta.date}</p>
+                </div>
               </Link>
             </li>
           ))}
@@ -50,9 +75,20 @@ export default function Blog() {
           list-style: none;
           font-size: 16px;
           margin: 0.8em 0;
+          padding: 6px 20px;
+          transition: 0.1s;
+          border-radius: 3px;
         }
         .container > ul > li:hover {
-          color: red;
+          background-color: hsla(150, 90%, 66%, 0.2);
+        }
+        .item {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .item p {
+          opacity: 0.7;
         }
         .navbar {
           display: flex;

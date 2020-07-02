@@ -323,22 +323,31 @@ button {
   width: 50%;
 }
 
+.document-link a {
+  padding: 8px 16px;
+  border-radius: 3px;
+  transition: 0.1s;
+}
+
 .document-left {
   position: relative;
   left: 45%; /* TODO: make document-left align with image */
 }
 
-.document-link::after {
-  content: "\2192";
-  transition: 0.3s;
-  margin: 0 10px;
-  cursor: pointer;
+.document-link a:hover {
+  background-color: hsla(150, 90%, 66%, 0.2);
 }
 
-.document-link:hover::after {
+/* .document-link::after {
+  content: "\2192";
+  transition: 0.3s;
+  cursor: pointer;
+} */
+
+/* .document-link:hover::after {
   margin: 0 20px;
   color: hsl(150, 90%, 66%);
-}
+} */
 
 .social-links {
   display: flex;

@@ -35,6 +35,7 @@ export const ProjectExample = () => {
               </p>
             </div>
             <div className="tech-stack">
+              {" "}
               <h3>Technology Used</h3>
               <ul>
                 <li>JavaScript (ES6+)</li>
@@ -48,7 +49,7 @@ export const ProjectExample = () => {
             </div>
           </div>
         </div>
-        <h2
+        <h3
           className="document-link p20"
           data-aos="fade-down"
           data-aos-anchor="#image-source"
@@ -57,7 +58,7 @@ export const ProjectExample = () => {
           <a href="https://www.github.com/thescripted/message-bottle-client">
             Repository
           </a>
-        </h2>
+        </h3>
       </div>
     </>
   )

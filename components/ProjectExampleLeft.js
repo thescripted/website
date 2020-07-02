@@ -50,17 +50,16 @@ export const ProjectExampleLeft = () => {
             />
           </a>
         </div>
-        <h2
+        <h3
           className="document-link document-left p20"
           data-aos="fade-down"
           data-aos-delay="650"
           data-aos-anchor="#left-image-source"
         >
           <a href="https://www.github.com/thescripted/trello-markup">
-            {" "}
-            Link to Repository
+            Repository
           </a>
-        </h2>
+        </h3>
       </div>
     </>
   )
