@@ -1,3 +1,4 @@
+import * as matter from "gray-matter"
 export default function Post(props) {
   return (
     <div className="post">

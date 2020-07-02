@@ -49,7 +49,12 @@ export default function Blog({ metadata }) {
                 as={`/blog/${formatTitleURLParam(meta.title)}`}
               >
                 <div className="item">
-                  <a>{meta.title}</a>
+                  <div className="item-title-layout">
+                    <p style={{ fontSize: "18px" }}>{meta.title}</p>
+                    <p style={{ opacity: 0.8, fontSize: "14px" }}>
+                      {meta.subtitle}
+                    </p>
+                  </div>
                   <p>{meta.date}</p>
                 </div>
               </Link>
@@ -70,12 +75,13 @@ export default function Blog({ metadata }) {
         .container > p {
           width: 70%;
           font-size: 24px;
+          margin-bottom: 2em;
         }
         .container > ul > li {
           list-style: none;
           font-size: 16px;
           margin: 0.8em 0;
-          padding: 6px 20px;
+          padding: 10px 24px;
           transition: 0.1s;
           border-radius: 3px;
         }
@@ -86,9 +92,14 @@ export default function Blog({ metadata }) {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+          align-items: center;
         }
-        .item p {
+        .item > p {
           opacity: 0.7;
+        }
+        .item-title-layout {
+          display: flex;
+          flex-direction: column;
         }
         .navbar {
           display: flex;
