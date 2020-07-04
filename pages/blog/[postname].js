@@ -1,35 +1,51 @@
 import * as matter from "gray-matter"
 import path from "path"
 import fs from "fs"
-import { formatTitleURLParam } from "support"
+import Head from "next/head"
+import ReactMarkdown from "react-markdown"
 
 export async function getStaticPaths() {
-  let metadata = []
-  const postsDirectory = path.join(process.cwd(), "public/posts")
-  const postsNames = fs.readdirSync(postsDirectory)
-  postsNames.map(post => {
-    const filePath = path.join(process.cwd(), `public/posts/${post}`)
-    const fileContent = fs.readFileSync(filePath, "utf-8")
-    const meta = matter(fileContent).data
-
-    metadata.push(meta)
-  })
-
-  const postpath = metadata.map(meta => ({
-    params: { postname: formatTitleURLParam(meta.title) },
+  // Grabs and formats URL Parameter for each posts
+  const directory = path.join(process.cwd(), "public/posts")
+  const postPath = fs.readdirSync(directory).map(url_param => ({
+    params: { postname: url_param.replace(".md", "") },
   }))
+  console.log("path: ", postPath)
 
-  console.log(postpath)
   return {
-    paths: postpath,
+    paths: postPath,
     fallback: false,
   }
 }
 
-export default function Post(props) {
+export async function getStaticProps({ params: { postname } }) {
+  // Grabs the Content for each page
+  const TextUnformatted = fs
+    .readFileSync(path.join(process.cwd(), `public/posts/${postname}.md`))
+    .toString()
+
+  const textMetaData = matter(TextUnformatted)
+  return {
+    props: {
+      content: textMetaData.content,
+      data: textMetaData.data,
+    },
+  }
+}
+
+export default function Post({ content, data }) {
   return (
-    <div className="post">
-      <h3>I need to know how to style all of this.</h3>
-    </div>
+    <>
+      <Head>
+        <title>{data.title}</title>
+        <meta title="description" content={data.subtitle} />
+      </Head>
+      <div className="post">
+        <h1>{data.title}</h1>
+        <h2>{data.subtitle}</h2>
+        <p>{data.date}</p>
+        <ReactMarkdown source={content} />
+      </div>
+    </>
   )
 }

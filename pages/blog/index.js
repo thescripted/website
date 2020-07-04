@@ -4,37 +4,36 @@ import { formatTitleURLParam } from "../../support"
 import * as matter from "gray-matter"
 import fs from "fs"
 import path from "path"
+import { MainNavBar } from "@components/MainNavBar"
 
 export async function getStaticProps() {
-  let metadata = []
   const postsDirectory = path.join(process.cwd(), "public/posts")
-  const postsNames = fs.readdirSync(postsDirectory)
-  const posts = postsNames.map(post => {
-    const filePath = path.join(process.cwd(), `public/posts/${post}`)
-    const fileContent = fs.readFileSync(filePath, "utf-8")
-    const meta = matter(fileContent).data
+  const postsFileNames = fs.readdirSync(postsDirectory)
 
-    metadata.push(meta)
+  const formattedDirectoryNames = postsFileNames.map(postname =>
+    postname.replace(".md", "")
+  )
+
+  const metadata = postsFileNames.map(file => {
+    const metaPath = path.join(process.cwd(), `public/posts/${file}`)
+    const meta = matter(fs.readFileSync(metaPath, "utf-8")).data
+    return meta
   })
 
   return {
     props: {
       metadata,
+      formattedDirectoryNames,
     },
   }
 }
-// TODO: Normalize Navbar across Blog and Home Page.
-export default function Blog({ metadata }) {
+export default function Blog({ metadata, formattedDirectoryNames }) {
   return (
     <>
-      <div className="navbar">
-        <span>
-          <Link href="/">
-            <a>Home</a>
-          </Link>
-        </span>
-      </div>
       <div className="container">
+        <span style={{ margin: 0 }}>
+          <MainNavBar blogPage={true} />
+        </span>
         <h2>Personal Blog</h2>
         <p>
           This will be the landing page for my blog. You will see all the links
@@ -45,7 +44,7 @@ export default function Blog({ metadata }) {
             <li key={meta.id}>
               <Link
                 href="/blog/[postname]"
-                as={`/blog/${formatTitleURLParam(meta.title)}`}
+                as={`/blog/${formatTitleURLParam(meta.title)}`} // Use FormattedURL instead of this function
               >
                 <div className="item">
                   <div className="item-title-layout">
@@ -67,6 +66,11 @@ export default function Blog({ metadata }) {
         </ul>
       </div>
       <style jsx>{`
+        .navbar span {
+          width: 80%;
+          max-width: 950px;
+          margin: auto;
+        }
         .container {
           width: 80%;
           max-width: 950px;

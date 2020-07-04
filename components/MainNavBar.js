@@ -15,16 +15,26 @@ export const MainNavBar = props => {
 
   return (
     <div id="mainNav" className="main-navbar">
-      <a href="#Home">Home</a>
-      <a href="#Projects">Projects</a>
-      <a href="#Contact">Contact</a>
-      <Link href="/blog">
-        <a>Blog</a>
-      </Link>
-      {/* <a href="/">Blog</a> */}
-      {/* <a href="#" className="icon" onClick={handleNavigation}>
+      {props.blogPage ? (
+        <>
+          <Link href="/">
+            <a className="blog-site">Home</a>
+          </Link>
+        </>
+      ) : (
+        <>
+          <a href="#Home">Home</a>
+          <a href="#Projects">Projects</a>
+          <a href="#Contact">Contact</a>
+          <Link href="/blog">
+            <a>Blog</a>
+          </Link>
+          {/* <a href="/">Blog</a> */}
+          {/* <a href="#" className="icon" onClick={handleNavigation}>
         <img src="hamburger.svg" />
       </a> */}
+        </>
+      )}
       <a href="Benjamin-Kinga__Resume.pdf">
         <button>Resume</button>
       </a>
