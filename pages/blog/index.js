@@ -25,7 +25,6 @@ export async function getStaticProps() {
 }
 // TODO: Normalize Navbar across Blog and Home Page.
 export default function Blog({ metadata }) {
-  console.log(metadata)
   return (
     <>
       <div className="navbar">
@@ -45,12 +44,17 @@ export default function Blog({ metadata }) {
           {metadata.map(meta => (
             <li key={meta.id}>
               <Link
-                href="/blog/[postname"
+                href="/blog/[postname]"
                 as={`/blog/${formatTitleURLParam(meta.title)}`}
               >
                 <div className="item">
                   <div className="item-title-layout">
-                    <p style={{ fontSize: "18px" }}>{meta.title}</p>
+                    <p
+                      style={{ fontSize: "18px", color: "hsl(150, 90%, 66%)" }}
+                    >
+                      {meta.title}
+                    </p>
+
                     <p style={{ opacity: 0.8, fontSize: "14px" }}>
                       {meta.subtitle}
                     </p>
@@ -70,7 +74,7 @@ export default function Blog({ metadata }) {
         }
         .container > h2 {
           font-size: 60px;
-          margin: 0.8em 0;
+          margin-bottom: 0.8em;
         }
         .container > p {
           width: 70%;

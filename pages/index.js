@@ -50,7 +50,7 @@ const HomePage = ({ repos }) => {
     <>
       <Head>
         <title>Benjamin Kinga</title>
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        {/* <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> */}
       </Head>
       <div className="main-container">
         <MainNavBar />
@@ -93,8 +93,8 @@ const HomePage = ({ repos }) => {
         <ContactField />
         <Footer />
       </div>
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-      <script>AOS.init();</script>
+      {/* <script src="https://unpkg.com/aos@next/dist/aos.js"></script> */}
+      {/* <script>AOS.init();</script> */}
     </>
   )
 }
