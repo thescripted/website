@@ -84,6 +84,11 @@ button {
   height: 100%;
   padding: 0 30px;
   transition: 0.1s;
+  border-radius: 5px;
+}
+
+.main-navbar a:not(:last-child):hover {
+  background: hsla(150, 90%, 66%, 0.2);
 }
 
 .main-navbar a:last-child {
@@ -385,6 +390,7 @@ button {
   display: block;
 }
 
+/* TODO: UPGRADE TO SASS. THIS IS ANNOYING */
 /* Responsive Baby */
 @media (max-width: 840px) {
   .main-container {

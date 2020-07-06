@@ -5,7 +5,6 @@ import Head from "next/head"
 import ReactMarkdown from "react-markdown"
 
 export async function getStaticPaths() {
-  // Grabs and formats URL Parameter for each posts
   const directory = path.join(process.cwd(), "public/posts")
   const postPath = fs.readdirSync(directory).map(url_param => ({
     params: { postname: url_param.replace(".md", "") },
@@ -19,7 +18,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { postname } }) {
-  // Grabs the Content for each page
   const TextUnformatted = fs
     .readFileSync(path.join(process.cwd(), `public/posts/${postname}.md`))
     .toString()
@@ -41,11 +39,36 @@ export default function Post({ content, data }) {
         <meta title="description" content={data.subtitle} />
       </Head>
       <div className="post">
-        <h1>{data.title}</h1>
-        <h2>{data.subtitle}</h2>
-        <p>{data.date}</p>
-        <ReactMarkdown source={content} />
+        <div className="header">
+          <h1>{data.title}</h1>
+          <h2 style={{ opacity: 0.7 }}>{data.subtitle}</h2>
+          <p style={{ opacity: 0.7 }}>{data.date}</p>
+        </div>
+        <div className="content">
+          <ReactMarkdown source={content} />
+        </div>
       </div>
+      <style jsx>{`
+        .post {
+          max-width: 750px;
+          margin: auto;
+        }
+        .header {
+          margin: 35px 0;
+        }
+        .header h1 {
+          font-size: 48px;
+          margin: 0.4em 0;
+        }
+        .content {
+          width: 650px;
+          margin: auto;
+          font-size: 18px;
+          line-height: 1.8em;
+          display: flex;
+          flex-direction: column;
+        }
+      `}</style>
     </>
   )
 }
