@@ -6,6 +6,7 @@ import { MainNavBar } from "@components/MainNavBar"
 import { ContactBar } from "@components/ContactBar"
 import { ContactField } from "@components/ContactField"
 import { Footer } from "@components/Footer"
+import { AdditionalProjects } from "@components/AdditionalProjects"
 
 import { useState, useEffect } from "react"
 import Head from "next/head"
@@ -89,6 +90,7 @@ const HomePage = ({ posts }) => {
           <h1 className="header-link">Projects</h1>
           <ProjectExample />
           <ProjectExampleLeft />
+          <AdditionalProjects />
         </div>
         <ContactField />
         <Footer />
