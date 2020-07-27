@@ -27,7 +27,7 @@ export const FancyNav = ({ elementLocation }) => {
   }
   useEffect(() => {
     setOffset(elementLocation.offset)
-    console.log(offset)
+    // console.log(offset)
   }, [offset])
 
   useEffect(() => {

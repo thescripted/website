@@ -22,7 +22,7 @@ export const ContactField = () => {
           I'm always looking for opportunities to contribute and grow with a
           company. Feel free to reach out to me.
         </p>
-        <a href="Benjamin-Kinga__Resume.pdf">
+        <a href="Benjamin_Kinga__Resume.pdf">
           <button>Resume</button>
         </a>
       </div>

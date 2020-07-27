@@ -21,7 +21,7 @@ export const MainNavBar = props => {
       {/* <a href="#" className="icon" onClick={handleNavigation}>
         <img src="hamburger.svg" />
       </a> */}
-      <a href="Benjamin-Kinga__Resume.pdf">
+      <a href="Benjamin_Kinga__Resume.pdf">
         <button>Resume</button>
       </a>
     </div>

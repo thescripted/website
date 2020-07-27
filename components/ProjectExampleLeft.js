@@ -24,9 +24,10 @@ export const ProjectExampleLeft = () => {
           <div className="copy-text" data-aos="fade-down" data-aos-delay="650">
             <div className="text-blurb f18">
               <p>
-                Trello Copywork is a functional redesign of Trello.com. It
-                consists of the major actions that can be done with Trello, such
-                as adding notes, draggable components, and user authentication.
+                Trello Copywork is a work-in-progress functional redesign of
+                Trello.com. It consists of the major actions that can be done
+                with Trello, such as add/update/deleting notes, and dragging
+                components to update state order.
               </p>
             </div>
             <div className="tech-stack">
@@ -36,8 +37,8 @@ export const ProjectExampleLeft = () => {
                 <li>PostgreSQL</li>
                 <li>Prisma</li>
                 <li>GraphQL</li>
-                <li>Redis</li>
-                <li>JWT</li>
+                <li>Urql</li>
+                <li>React-dnd</li>
               </ul>
             </div>
           </div>

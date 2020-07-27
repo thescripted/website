@@ -37,8 +37,7 @@ export const ProjectExample = () => {
             <div className="tech-stack">
               <h3>Technology Used</h3>
               <ul>
-                <li>JavaScript (ES6+)</li>
-                <li>React (v16+)</li>
+                <li>React</li>
                 <li>Node.js</li>
                 <li>AWS Lambda</li>
                 <li>Netlify</li>

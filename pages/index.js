@@ -2,11 +2,11 @@ import { FancyNav } from "@components/FancyNav"
 import { TestContent } from "@components/TestContent"
 import { ProjectExample } from "@components/ProjectExample"
 import { ProjectExampleLeft } from "@components/ProjectExampleLeft"
+import { ProjectExampleThird } from "@components/ProjectExampleThird"
 import { MainNavBar } from "@components/MainNavBar"
 import { ContactBar } from "@components/ContactBar"
 import { ContactField } from "@components/ContactField"
 import { Footer } from "@components/Footer"
-import { AdditionalProjects } from "@components/AdditionalProjects"
 
 import { useState, useEffect } from "react"
 import Head from "next/head"
@@ -16,6 +16,11 @@ export async function getStaticProps() {
   const response = await fetch(
     "https://api.github.com/users/thescripted/repos"
   ).then(res => res.json())
+
+  response.sort(function (a, b) {
+    return new Date(b.updated_at) - new Date(a.updated_at)
+  })
+
   Object.entries(response)
     .slice(0, 3)
     .map(item => {
@@ -51,7 +56,7 @@ const HomePage = ({ posts }) => {
     <>
       <Head>
         <title>Benjamin Kinga</title>
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        {/* <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> */}
       </Head>
       <div className="main-container">
         <MainNavBar />
@@ -69,7 +74,7 @@ const HomePage = ({ posts }) => {
           </div>
           <div className="intro-bio">
             <div className="hero-image-wrapper">
-              <img className="hero-image" src="Obama.jpg" alt="My Photo" />
+              <img className="hero-image" src="face.jfif" alt="My Photo" />
             </div>
             <div className="last-repositories">
               <i style={{ opacity: 0.3 }}>Latest Repository Updated ...</i>
@@ -88,15 +93,17 @@ const HomePage = ({ posts }) => {
         </div>
         <div className="project-fields" id="Projects">
           <h1 className="header-link">Projects</h1>
-          <ProjectExample />
+          {/* TODO: Create "Project" Component & Inject data externally (i.e. Markdown file, props, etc)*/}
+          <ProjectExampleThird />
           <ProjectExampleLeft />
-          <AdditionalProjects />
+          <ProjectExample />
+          {/* <AdditionalProjects /> */}
         </div>
         <ContactField />
         <Footer />
       </div>
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-      <script>AOS.init();</script>
+      {/* <script src="https://unpkg.com/aos@next/dist/aos.js"></script> */}
+      {/* <script>AOS.init();</script> */}
     </>
   )
 }
