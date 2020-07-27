@@ -7,7 +7,7 @@ export const ContactBar = props => {
       <a href="https://www.linkedin.com/in/benjamin-kinga-b32a82105/">
         <img className="icon-sm" src="linkedin.svg" alt="Github" />
       </a>
-      <a href="https://www.twitter.com/BenjaminKinga1">
+      <a href="https://www.twitter.com/thescriptedone">
         <img className="icon-sm" src="twitter.svg" alt="Github" />
       </a>
     </div>
