@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 export const MainNavBar = props => {
   const handleNavigation = () => {
     const navBar = document.getElementById("mainNav")

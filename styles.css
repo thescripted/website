@@ -29,7 +29,6 @@ button {
   padding: 8px 42px;
   background-color: transparent;
   color: #fff;
-  transition: 0.1s;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 16px;
 }
@@ -82,7 +81,6 @@ button {
   align-items: center;
   height: 100%;
   padding: 0 30px;
-  transition: 0.1s;
 }
 
 .main-navbar a:last-child {

@@ -29,9 +29,9 @@ export const ProjectExampleThird = () => {
           <div className="copy-text" data-aos="fade-down" data-aos-delay="650">
             <div className="text-blurb f18 l40">
               <p>
-                A Work-In-Progress web application for trading information and
-                analysis, including stock market search, historical price-data,
-                and realtime market movement. Bouilt with React and D3.
+                A web application for trading information and analysis,
+                including stock market search, historical price-data, and
+                realtime market movement. Bouilt with React and D3.
               </p>
             </div>
             <div className="tech-stack">
