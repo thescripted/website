@@ -81,6 +81,12 @@ button {
   align-items: center;
   height: 100%;
   padding: 0 30px;
+  transition: 0.1s;
+  border-radius: 5px;
+}
+
+.main-navbar a:not(:last-child):hover {
+  background: hsla(150, 90%, 66%, 0.2);
 }
 
 .main-navbar a:last-child {
@@ -321,22 +327,31 @@ button {
   width: 50%;
 }
 
+.document-link a {
+  padding: 8px 16px;
+  border-radius: 3px;
+  transition: 0.1s;
+}
+
 .document-left {
   position: relative;
   left: 45%; /* TODO: make document-left align with image */
 }
 
-.document-link::after {
-  content: "\2192";
-  transition: 0.3s;
-  margin: 0 10px;
-  cursor: pointer;
+.document-link a:hover {
+  background-color: hsla(150, 90%, 66%, 0.2);
 }
 
-.document-link:hover::after {
+/* .document-link::after {
+  content: "\2192";
+  transition: 0.3s;
+  cursor: pointer;
+} */
+
+/* .document-link:hover::after {
   margin: 0 20px;
   color: hsl(150, 90%, 66%);
-}
+} */
 
 .social-links {
   display: flex;
@@ -364,6 +379,7 @@ button {
   display: block;
 }
 
+/* TODO: UPGRADE TO SASS. THIS IS ANNOYING */
 /* Responsive Baby */
 @media (max-width: 840px) {
   .main-container {

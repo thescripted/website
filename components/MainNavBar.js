@@ -1,3 +1,6 @@
+import { useState } from "react"
+import Link from "next/link"
+
 export const MainNavBar = props => {
   const handleNavigation = () => {
     const navBar = document.getElementById("mainNav")
@@ -12,13 +15,26 @@ export const MainNavBar = props => {
 
   return (
     <div id="mainNav" className="main-navbar">
-      <a href="#Home">Home</a>
-      <a href="#Projects">Projects</a>
-      <a href="#Contact">Contact</a>
-      {/* <a href="/">Blog</a> */}
-      {/* <a href="#" className="icon" onClick={handleNavigation}>
+      {props.blogPage ? (
+        <>
+          <Link href="/">
+            <a className="blog-site">Home</a>
+          </Link>
+        </>
+      ) : (
+        <>
+          <a href="#Home">Home</a>
+          <a href="#Projects">Projects</a>
+          <a href="#Contact">Contact</a>
+          <Link href="/blog">
+            <a>Blog</a>
+          </Link>
+          {/* <a href="/">Blog</a> */}
+          {/* <a href="#" className="icon" onClick={handleNavigation}>
         <img src="hamburger.svg" />
       </a> */}
+        </>
+      )}
       <a href="Benjamin_Kinga__Resume.pdf">
         <button>Resume</button>
       </a>
