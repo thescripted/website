@@ -1,0 +1,6 @@
+.techitem {
+  padding: 0 40px 0 0;
+  list-style: none;
+  display: inline-block;
+  color: hsl(150, 90%, 66%);
+}

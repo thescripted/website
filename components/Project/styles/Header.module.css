@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.text {
+  font-size: 32px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  filter: invert(100%) sepia(7%) saturate(0%) hue-rotate(82deg) brightness(110%)
+    contrast(106%);
+  opacity: 0.5;
+  transition: opacity 0.1s;
+  cursor: pointer;
+  margin: 0 20px;
+}
+.icon:hover {
+  opacity: 0.85;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+}
+
+.date {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  text-align: center;
+}

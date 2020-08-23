@@ -1,0 +1,42 @@
+.container {
+  position: relative;
+  width: 540px;
+  height: calc(540 * 9px / 16);
+  opacity: 0.7;
+  border-radius: 5px;
+  z-index: -1;
+  transition: 0.1s;
+}
+.container:hover {
+  opacity: 0.9;
+}
+
+.container img {
+  max-height: 100%;
+}
+
+.container a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 840px) {
+  .container {
+    width: 90%;
+    height: calc(80vw * 9 / 16);
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    width: 450px;
+    height: calc(450px * 9 / 16);
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 375px;
+    height: calc(375px * 9 / 16);
+  }
+}

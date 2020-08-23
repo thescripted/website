@@ -7,9 +7,23 @@ import { MainNavBar } from "@components/MainNavBar"
 import { ContactBar } from "@components/ContactBar"
 import { ContactField } from "@components/ContactField"
 import { Footer } from "@components/Footer"
+import ProjectContainer from "@components/Project/ProjectContainer"
 
 import { useState, useEffect } from "react"
 import Head from "next/head"
+
+function TestingComponent({ children }) {
+  return <div>{children}</div>
+}
+
+function Testing({ children }) {
+  return <div>{children}</div>
+}
+
+function GlobalTest({ children }) {
+  console.log(children)
+  return <div>{children}</div>
+}
 
 export async function getStaticProps() {
   const repos = []
@@ -38,9 +52,12 @@ export async function getStaticProps() {
 }
 
 const HomePage = ({ repos }) => {
+  // let repos = []
+
   const [locations, setLocations] = useState({})
 
   useEffect(() => {
+    // fetch('api').then(...)
     const elementLocation = {
       Home: document.getElementById("Home").getBoundingClientRect(),
       Projects: document.getElementById("Projects").getBoundingClientRect(),
@@ -94,9 +111,11 @@ const HomePage = ({ repos }) => {
         <div className="project-fields" id="Projects">
           <h1 className="header-link">Projects</h1>
           {/* TODO: Create "Project" Component & Inject data externally (i.e. Markdown file, props, etc)*/}
+          <ProjectContainer />
           <ProjectExampleThird />
           <ProjectExampleLeft />
           <ProjectExample />
+
           {/* <AdditionalProjects /> */}
         </div>
         <ContactField />

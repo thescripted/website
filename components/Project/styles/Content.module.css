@@ -1,0 +1,14 @@
+.blurb {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: hsla(180, 70%, 20%, 0.6);
+  font-size: 18px;
+}
+
+@media (max-width: 840px) {
+  .text-blurb {
+    box-sizing: border-box;
+  }
+}

@@ -55,18 +55,7 @@ button {
 .l40 {
   left: -40px;
 }
-.icon-sm {
-  width: 24px;
-  height: 24px;
-  filter: invert(100%) sepia(7%) saturate(0%) hue-rotate(82deg) brightness(110%)
-    contrast(106%);
-  opacity: 0.5;
-  transition: 0.1s;
-  cursor: pointer;
-}
-.icon-sm:hover {
-  opacity: 0.85;
-}
+
 /* Main CSS */
 
 .main-navbar {
@@ -270,9 +259,20 @@ button {
   flex-grow: 1;
   text-align: right;
 }
-.link-outside {
-  margin: 0 20px;
+
+.icon-sm {
+  width: 24px;
+  height: 24px;
+  filter: invert(100%) sepia(7%) saturate(0%) hue-rotate(82deg) brightness(110%)
+    contrast(106%);
+  opacity: 0.5;
+  transition: 0.1s;
+  cursor: pointer;
 }
+.icon-sm:hover {
+  opacity: 0.85;
+}
+
 .content-field {
   display: flex;
   flex-direction: row;
