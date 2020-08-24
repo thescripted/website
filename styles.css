@@ -65,22 +65,19 @@ button {
   align-items: center;
   height: 48px;
 }
-.main-navbar a {
+.main-navbar > * {
   display: flex;
   align-items: center;
   height: 100%;
   padding: 0 30px;
-  transition: 0.1s;
+  transition: background 0.1s;
   border-radius: 5px;
 }
 
-.main-navbar a:not(:last-child):hover {
+.main-navbar > *:hover {
   background: hsla(150, 90%, 66%, 0.2);
 }
 
-.main-navbar a:last-child {
-  margin-left: 50px;
-}
 .main-navbar a.icon {
   display: none;
   filter: invert(100%) sepia(7%) saturate(0%) hue-rotate(82deg) brightness(110%)
@@ -379,8 +376,36 @@ button {
   display: block;
 }
 
-/* TODO: UPGRADE TO SASS. THIS IS ANNOYING */
-/* Responsive Baby */
+/* Blog Content */
+
+.blog_content > p:not(:first-child) {
+  /* yikes */
+  margin: 20px 0;
+}
+
+.blog_content h1 {
+  margin-top: 64px;
+}
+
+.blog_content pre {
+  margin-bottom: 64px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.blog_content img {
+  padding: 8px;
+  border-radius: 3px;
+  background: white;
+}
+
+.blog_content p + span {
+  margin: 0;
+}
+
+.blog_content a {
+  color: lightblue;
+}
 @media (max-width: 840px) {
   .main-container {
     width: 95%;

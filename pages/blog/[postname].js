@@ -3,7 +3,8 @@ import path from "path"
 import fs from "fs"
 import Head from "next/head"
 import ReactMarkdown from "react-markdown"
-
+import CodeBlock from "@components/CodeBlock"
+import Navigator from "@components/Navigator/Navigator"
 export async function getStaticPaths() {
   const directory = path.join(process.cwd(), "public/posts")
   const postPath = fs.readdirSync(directory).map(url_param => ({
@@ -38,6 +39,7 @@ export default function Post({ content, data }) {
         <title>{data.title}</title>
         <meta title="description" content={data.subtitle} />
       </Head>
+      <Navigator source="BLOG_POST" />
       <div className="post">
         <div className="header">
           <h1>{data.title}</h1>
@@ -45,7 +47,12 @@ export default function Post({ content, data }) {
           <p style={{ opacity: 0.7 }}>{data.date}</p>
         </div>
         <div className="content">
-          <ReactMarkdown source={content} />
+          <ReactMarkdown
+            source={content}
+            escapeHtml={false}
+            className="blog_content" // TODO: Does not work with JSX, maybe modules???\
+            renderers={{ code: CodeBlock }}
+          />
         </div>
       </div>
       <style jsx>{`

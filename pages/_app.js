@@ -1,4 +1,5 @@
 import "../styles.css"
+import "highlight.js/styles/github.css"
 
 // This default export is required in a new `pages/_app.js` file
 // https://nextjs.org/docs/basic-features/built-in-css-support for documentation

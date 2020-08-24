@@ -8,7 +8,9 @@ import styles from "./styles/ProjectContainer.module.css"
 
 function ProjectContainer() {
   return (
-    <div className={styles.projectContainer}>
+    <div className={styles.projectContainer} id="Projects">
+      <h1 className="header-link">Projects</h1>
+
       <Project projectLink={false} githubLink={false}>
         <Header link={`http://tradingdashboard.netlify.app`} date={`July 2020`}>
           Trading Dashboard & Tooling

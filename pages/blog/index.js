@@ -4,7 +4,8 @@ import { formatTitleURLParam } from "../../support"
 import * as matter from "gray-matter"
 import fs from "fs"
 import path from "path"
-import { MainNavBar } from "@components/MainNavBar"
+import Navigator from "@components/Navigator/Navigator"
+import Head from "next/head"
 
 export async function getStaticProps() {
   const postsDirectory = path.join(process.cwd(), "public/posts")
@@ -30,10 +31,12 @@ export async function getStaticProps() {
 export default function Blog({ metadata, formattedDirectoryNames }) {
   return (
     <>
+      <Head>
+        <title>Blogs</title>
+      </Head>
+      <Navigator source="BLOG_PAGE" />
       <div className="container">
-        <span style={{ margin: 0 }}>
-          <MainNavBar blogPage={true} />
-        </span>
+        <span style={{ margin: 0 }}></span>
         <h2>Personal Blog</h2>
         <p>
           This will be the landing page for my blog. You will see all the links
@@ -46,7 +49,7 @@ export default function Blog({ metadata, formattedDirectoryNames }) {
                 href="/blog/[postname]"
                 as={`/blog/${formatTitleURLParam(meta.title)}`} // Use FormattedURL instead of this function
               >
-                <div className="item">
+                <div role="button" className="item">
                   <div className="item-title-layout">
                     <p
                       style={{ fontSize: "18px", color: "hsl(150, 90%, 66%)" }}
