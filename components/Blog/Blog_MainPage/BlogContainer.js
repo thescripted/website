@@ -4,7 +4,6 @@ import Link from "next/link"
 import { formatTitleURLParam } from "support"
 
 function BlogContainer({ metadata }) {
-  console.log(metadata)
   return (
     <div className={styles.container} id="Blogs">
       <h1 className="header-link">Blogs</h1>
@@ -12,11 +11,12 @@ function BlogContainer({ metadata }) {
         {metadata.map(function (item) {
           return (
             <Link
+              key={item.id}
               href="/blog/[postname]"
               as={`/blog/${formatTitleURLParam(item.title)}`}
             >
               <a href={`/blog/${formatTitleURLParam(item.title)}`}>
-                <BlogPost key={item.id} title={item.title} />
+                <BlogPost title={item.title} />
               </a>
             </Link>
           )

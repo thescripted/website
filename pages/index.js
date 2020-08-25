@@ -12,20 +12,19 @@ import path from "path"
 export async function getStaticProps() {
   const repos = []
   const response = await fetch(
-    "https://api.github.com/users/thescripted/repos"
+    "https://api.github.com/users/thescripted/repos?sort=updated"
   ).then(res => res.json())
 
-  response.sort(function (a, b) {
-    return new Date(b.updated_at) - new Date(a.updated_at)
-  })
-
-  Object.entries(response)
+  response
+    // .sort(function (a, b) {
+    //   return new Date(b.updated_at) - new Date(a.updated_at)
+    // })
     .slice(0, 3)
     .map(item => {
       repos.push({
-        key: item[1].id,
-        name: item[1].name,
-        url: item[1].html_url,
+        key: item.id,
+        name: item.name,
+        url: item.html_url,
       })
     })
 
@@ -44,7 +43,7 @@ export async function getStaticProps() {
   }
 }
 
-const HomePage = ({ metadata }) => {
+const HomePage = ({ repos, metadata }) => {
   return (
     <>
       <Head>
@@ -52,7 +51,7 @@ const HomePage = ({ metadata }) => {
       </Head>
       <Navigator />
       <div className="main-container">
-        <Hero />
+        <Hero repos={repos} />
         <ProjectContainer />
         <BlogContainer metadata={metadata} />
         <ContactField />

@@ -3,9 +3,7 @@ import { ContactBar } from "@components/ContactBar"
 import { FancyNav } from "@components/FancyNav"
 import { useState, useEffect } from "react"
 
-function Hero() {
-  let repos = []
-
+function Hero({ repos }) {
   const [locations, setLocations] = useState({})
 
   useEffect(() => {
@@ -43,9 +41,9 @@ function Hero() {
           <div className="last-repositories">
             <i style={{ opacity: 0.3 }}>Latest Repository Updated ...</i>
             <div className="latest-commits">
-              {repos.map(repos => (
-                <a href={repos.url} key={repos.key}>
-                  {repos.name}
+              {repos.map(repo => (
+                <a href={repo.url} key={repo.key}>
+                  {repo.name}
                 </a>
               ))}
             </div>
