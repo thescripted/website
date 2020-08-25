@@ -13,6 +13,7 @@ function Hero() {
     const elementLocation = {
       Home: document.getElementById("Home").getBoundingClientRect(),
       Projects: document.getElementById("Projects").getBoundingClientRect(),
+      Blogs: document.getElementById("Blogs").getBoundingClientRect(),
       Contact: document.getElementById("Contact").getBoundingClientRect(),
       // getBoundingClientRect is relative to the viewport. This offset adjusts the correct locations in case the user refreshes the page halfway down.
       offset: window.pageYOffset,

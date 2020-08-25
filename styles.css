@@ -1,4 +1,4 @@
-html {
+.main-container {
   scroll-behavior: smooth;
 }
 body {
@@ -396,7 +396,11 @@ button {
 .blog_content img {
   padding: 8px;
   border-radius: 3px;
-  background: white;
+  max-height: 400px;
+  max-width: 100%;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.93);
+  box-sizing: border-box;
 }
 
 .blog_content p + span {
@@ -406,6 +410,7 @@ button {
 .blog_content a {
   color: lightblue;
 }
+
 @media (max-width: 840px) {
   .main-container {
     width: 95%;

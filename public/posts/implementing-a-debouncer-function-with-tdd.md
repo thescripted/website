@@ -1,22 +1,27 @@
 ---
-title: Implementing a Debouncer function with TDD
-subtitle: ""
+title: Implementing a Debouncer Function with TDD
+subtitle: "Building features with Test Driven Development"
 date: 8/24/2020
 id: 101
 ---
 
-A debouncer is a method used to delay a function invocation until a certain time period has elapsed. If the function is called before the time period has elapsed, then the function will not be invoked and the delay will reset.
+A debouncer is a method used to delay a function invocation until a defined period has elapsed. If the function is called before the period elapses, then the function will not invoke. Instead, the time-out period resets, and--depending on the implementation of the debouncer--a further delay will occur before invocation.
+
 ![Image Example](../debouncer_example.svg)
 
-<figcaption style="font-size: 12px; opacity: 0.8; text-align: center;">Example of a debouncer. Colored Tiles are function invocation.</figcaption>
+<figcaption style="font-size: 14px; opacity: 0.8; text-align: center;">Example of a debouncer. Colored Tiles are function invocation.</figcaption>
+<br>
+This method is useful in applications where some operations are potentially expensive. For example, querying a search result on every keypress, requesting data over a network, or executing computationally intensive operations can benefit from delaying or rejecting the execution of some requests.
 
-This method is useful in applications where certain operations may be expensive. For example, querying a search result on every keypress, requesting data across a network, or executing computationally intensive functions.
+![Trading Example](../tradinggif.gif)
 
-Below I implement a leading debounce function that takes advantage of these features, utilizing TDD.
+<figcaption style="font-size: 14px; opacity: 0.8; text-align: center;">Debouncing a search query on each key press.</figcaption>
+<br>
+Below I implement a way to use a debouncer in a JavaScript file that takes advantage of these features, utilizing Test Driven Development (TDD).
 
 # Test-Driven Development
 
-For a leading debouncer, the function should execute immediately the first time it is called.
+For the debouncer I'm going to build, when called, the function should execute immediately. This is an example of a leading debouncer (although many debouncer functions, such as [Lodash's](https://lodash.com/docs/4.17.15#debounce), use a trailing debouncer by default).
 
 ```javascript
 //debouncer.test.js
@@ -32,7 +37,7 @@ describe("debouncer test suite", () => {
 });
 ```
 
-To make this test pass, we first need to define the debouncer function to take in the callback parameter and the timeout period.
+To make this test pass, we want to define a debouncer function which will accept two parameters: the function we need to debounce, and the timeout period.
 
 ```javascript
 //debouncer.js
@@ -43,7 +48,7 @@ function debouncer(fn, timeout) {
 }
 ```
 
-Here, the debouncer is simply executing the function everytime it is invoked. The timeout was not used because that was not needed to pass this test. Let's find a way to use it now:
+The provided function executes every time we invoke the debouncer. Let's write a second test that catches only the first invocation, but not the subsequent one.
 
 ```javascript
 //debouncer.test.js
@@ -59,7 +64,7 @@ it("should not be executed twice if the timeout period has not elapsed", () => {
 });
 ```
 
-Initially the test will fail. We need a way to know if the function has already been invoked. Here's one way of doing just that:
+Initially the test will fail. We need a way to know if the function has already been invoked.
 
 ```javascript
 //debouncer.js
@@ -75,7 +80,7 @@ function debouncer(fn, timeout) {
 }
 ```
 
-This will pass the second test. However, this will still not be production-ready as this method will call a function once and _only_ once. What needs to be implemented is a way to know if we are in a timeout period, and not invoke the function if we are.
+This will pass the second test. However, this will still not be production-ready as this method will call a function once and only once. We need to update our `invoke` variable once the timeout period has elapsed. So far, all the tests passed without the function's second parameter because we did not need it. Let's find a way to use it now:
 
 ```javascript
 //debouncer.test.js
@@ -94,7 +99,7 @@ it("should not be executed twice if the timeout period has not elapsed", done =>
 })
 ```
 
-To pass this test, I created a method to reset the timer everytime the debouncer is called and a timeout handler to set and clear timeouts. Only when the timeout has elapsed will the provided function be able to invoke.
+To pass this test, I created a method to reset the timer every time we call the debouncer. Additionally, I have a timeout handler that will set and clear timeouts. Only when the timeout has elapsed will the provided function be able to execute.
 
 ```javascript
 //debouncer.js
@@ -126,12 +131,12 @@ function debouncer(fn, timeout) {
 }
 ```
 
-Here would be a good point to refactor the test suite and functions as needed, In my case I've broken up some of the logics in it's own function within my debouncer.
+Here would be a good point to refactor the test suite and functions as needed.
 <br>
 
 # Conclusion
 
-By using TDD, both the function and the test suite are being built together. This allows for robust code, where any incremental features can be added with the safety of all previous tests passing as well. Some additional features could include input validations, a configuration option (perhaps it would be useful to give the user options to indicate if they want a leading or trailing debouncer), or anything else needed for whatever project you're building.
+By using TDD, we are building both the function and the test suite for it. This allows for robust code, where we can add any incremental features with the safety of ensuring all previous tests passing as well. Some additional features and tests could include input validations, a configuration option (perhaps it would be useful to give the user options to indicate if they want a leading or trailing debouncer), or anything else needed for whatever project you're building.
 
 I've created a similar debounce method as an NPM package with a little bit more robust test suite, which can be found [Here](https://www.npmjs.com/package/@somethingscripted/debouncer).
 

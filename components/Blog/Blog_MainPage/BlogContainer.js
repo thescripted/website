@@ -1,0 +1,31 @@
+import styles from "./styles/BlogContainer.module.css"
+import BlogPost from "./BlogPost"
+import Link from "next/link"
+import { formatTitleURLParam } from "support"
+
+function BlogContainer({ metadata }) {
+  console.log(metadata)
+  return (
+    <div className={styles.container} id="Blogs">
+      <h1 className="header-link">Blogs</h1>
+      <div className={styles.contentList}>
+        {metadata.map(function (item) {
+          return (
+            <Link
+              href="/blog/[postname]"
+              as={`/blog/${formatTitleURLParam(item.title)}`}
+            >
+              <a href={`/blog/${formatTitleURLParam(item.title)}`}>
+                <BlogPost key={item.id} title={item.title} />
+              </a>
+            </Link>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+export async function getStaticProps() {}
+
+export default BlogContainer

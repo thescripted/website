@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { posts } from "@components/posts"
 import { formatTitleURLParam } from "../../support"
 import * as matter from "gray-matter"
 import fs from "fs"

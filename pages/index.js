@@ -1,9 +1,13 @@
-import Navigator from "@components/Navigator/Navigator"
+import Head from "next/head"
 import { ContactField } from "@components/ContactField"
 import { Footer } from "@components/Footer"
-import ProjectContainer from "@components/Project/ProjectContainer"
 import Hero from "@components/Hero/Hero"
-import Head from "next/head"
+import ProjectContainer from "@components/Project/ProjectContainer"
+import BlogContainer from "@components/Blog/Blog_MainPage/BlogContainer"
+import Navigator from "@components/Navigator/Navigator"
+import * as matter from "gray-matter"
+import fs from "fs"
+import path from "path"
 
 export async function getStaticProps() {
   const repos = []
@@ -24,14 +28,23 @@ export async function getStaticProps() {
         url: item[1].html_url,
       })
     })
+
+  const postsDirectory = path.join(process.cwd(), "public/posts")
+  const postsFileNames = fs.readdirSync(postsDirectory)
+  const metadata = postsFileNames.map(file => {
+    const metaPath = path.join(process.cwd(), `public/posts/${file}`)
+    const meta = matter(fs.readFileSync(metaPath, "utf-8")).data
+    return meta
+  })
   return {
     props: {
       repos,
+      metadata,
     },
   }
 }
 
-const HomePage = () => {
+const HomePage = ({ metadata }) => {
   return (
     <>
       <Head>
@@ -41,6 +54,7 @@ const HomePage = () => {
       <div className="main-container">
         <Hero />
         <ProjectContainer />
+        <BlogContainer metadata={metadata} />
         <ContactField />
         <Footer />
       </div>
