@@ -9,9 +9,9 @@ A debouncer is a method used to delay a function invocation until a defined peri
 
 ![Image Example](../debouncer_example.svg)
 
-<figcaption style="font-size: 14px; opacity: 0.8; text-align: center;">Example of a debouncer. Colored Tiles are function invocation.</figcaption>
+<figcaption style="font-size: 14px; opacity: 0.8; text-align: center;">Debouncer visualized. Colored tiles are function invocation.</figcaption>
 <br>
-This method is useful in applications where some operations are potentially expensive. For example, querying a search result on every keypress, requesting data over a network, or executing computationally intensive operations can benefit from delaying or rejecting the execution of some requests.
+This method is useful in applications where some operations are potentially expensive. For example, querying a search result on every key press, requesting data over a network, or executing computationally intensive operations can benefit from delaying or rejecting the execution of some requests.
 
 ![Trading Example](../tradinggif.gif)
 
@@ -84,7 +84,7 @@ This will pass the second test. However, this will still not be production-ready
 
 ```javascript
 //debouncer.test.js
-it("should not be executed twice if the timeout period has not elapsed", done => {
+it("should execute again after the timeout period is complete", done => {
   let count = 0
   debounce = debouncer(function (increment) {
     count = count + increment
@@ -138,6 +138,7 @@ Here would be a good point to refactor the test suite and functions as needed.
 
 By using TDD, we are building both the function and the test suite for it. This allows for robust code, where we can add any incremental features with the safety of ensuring all previous tests passing as well. Some additional features and tests could include input validations, a configuration option (perhaps it would be useful to give the user options to indicate if they want a leading or trailing debouncer), or anything else needed for whatever project you're building.
 
-I've created a similar debounce method as an NPM package with a little bit more robust test suite, which can be found [Here](https://www.npmjs.com/package/@somethingscripted/debouncer).
+I've created a similar debounce method as an NPM package with a little bit more robust test suite, which can be found [here](https://www.npmjs.com/package/@somethingscripted/debouncer).
 
-_Thanks for reading._
+Thanks for reading.
+_Ben_
