@@ -376,41 +376,6 @@ button {
   display: block;
 }
 
-/* Blog Content */
-
-.blog_content > p:not(:first-child) {
-  /* yikes */
-  margin: 20px 0;
-}
-
-.blog_content h1 {
-  margin-top: 64px;
-}
-
-.blog_content pre {
-  margin-bottom: 64px;
-  font-size: 14px;
-  border-radius: 3px;
-}
-
-.blog_content img {
-  padding: 8px;
-  border-radius: 3px;
-  max-height: 400px;
-  max-width: 100%;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.93);
-  box-sizing: border-box;
-}
-
-.blog_content p + span {
-  margin: 0;
-}
-
-.blog_content a {
-  color: lightblue;
-}
-
 @media (max-width: 840px) {
   .main-container {
     width: 95%;

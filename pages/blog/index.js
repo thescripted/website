@@ -5,6 +5,7 @@ import fs from "fs"
 import path from "path"
 import Navigator from "@components/Navigator/Navigator"
 import Head from "next/head"
+import styles from "./index.module.css"
 
 export async function getStaticProps() {
   const postsDirectory = path.join(process.cwd(), "public/posts")
@@ -34,7 +35,7 @@ export default function Blog({ metadata, formattedDirectoryNames }) {
         <title>Blogs</title>
       </Head>
       <Navigator source="BLOG_PAGE" />
-      <div className="container">
+      <div className={styles.container}>
         <span style={{ margin: 0 }}></span>
         <h2>Personal Blog</h2>
         <p>
@@ -48,8 +49,8 @@ export default function Blog({ metadata, formattedDirectoryNames }) {
                 href="/blog/[postname]"
                 as={`/blog/${formatTitleURLParam(meta.title)}`} // Use FormattedURL instead of this function
               >
-                <div role="button" className="item">
-                  <div className="item-title-layout">
+                <div role="button" className={styles.item}>
+                  <div className={styles.item_title_layout}>
                     <p
                       style={{ fontSize: "18px", color: "hsl(150, 90%, 66%)" }}
                     >
@@ -67,56 +68,6 @@ export default function Blog({ metadata, formattedDirectoryNames }) {
           ))}
         </ul>
       </div>
-      <style jsx>{`
-        .navbar span {
-          width: 80%;
-          max-width: 950px;
-          margin: auto;
-        }
-        .container {
-          width: 80%;
-          max-width: 950px;
-          margin: auto;
-        }
-        .container > h2 {
-          font-size: 60px;
-          margin-bottom: 0.8em;
-        }
-        .container > p {
-          width: 70%;
-          font-size: 24px;
-          margin-bottom: 2em;
-        }
-        .container > ul > li {
-          list-style: none;
-          font-size: 16px;
-          margin: 0.8em 0;
-          padding: 10px 24px;
-          transition: 0.1s;
-          border-radius: 3px;
-        }
-        .container > ul > li:hover {
-          background-color: hsla(150, 90%, 66%, 0.2);
-        }
-        .item {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-        }
-        .item > p {
-          opacity: 0.7;
-        }
-        .item-title-layout {
-          display: flex;
-          flex-direction: column;
-        }
-        .navbar {
-          display: flex;
-          align-items: center;
-          min-height: 60px;
-        }
-      `}</style>
     </>
   )
 }

@@ -16,7 +16,11 @@ function BlogContainer({ metadata }) {
               as={`/blog/${formatTitleURLParam(item.title)}`}
             >
               <a href={`/blog/${formatTitleURLParam(item.title)}`}>
-                <BlogPost title={item.title} />
+                <BlogPost
+                  title={item.title}
+                  date={item.date}
+                  subtitle={item.subtitle}
+                />
               </a>
             </Link>
           )

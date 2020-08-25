@@ -13,6 +13,11 @@
 .imagecontainer {
   margin-right: 20px;
 }
+
+.imagecontainer img {
+  min-height: 200px;
+  min-width: 300px;
+}
 .main {
   position: relative;
   display: flex;
@@ -23,4 +28,33 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+}
+
+.repository {
+  transition: color 0.1s;
+  margin: 4px 0;
+}
+
+.repository:hover {
+  color: hsla(150, 90%, 66%, 0.6);
+}
+
+@media (max-width: 875px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .imagecontainer {
+    margin-right: 0;
+  }
+
+  .imagecontainer img {
+    width: 100%;
+  }
+
+  .contentcontainer {
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
 }

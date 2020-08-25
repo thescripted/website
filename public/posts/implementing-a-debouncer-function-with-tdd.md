@@ -141,4 +141,5 @@ By using TDD, we are building both the function and the test suite for it. This 
 I've created a similar debounce method as an NPM package with a little bit more robust test suite, which can be found [here](https://www.npmjs.com/package/@somethingscripted/debouncer).
 
 Thanks for reading.
+
 _Ben_

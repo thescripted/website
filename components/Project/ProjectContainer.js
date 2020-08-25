@@ -11,7 +11,10 @@ function ProjectContainer() {
     <div className={styles.projectContainer} id="Projects">
       <h1 className="header-link">Projects</h1>
 
-      <Project projectLink={false} githubLink={false}>
+      <Project
+        projectLink={false}
+        github={`https://github.com/thescripted/trading_dashboard`}
+      >
         <Header link={`http://tradingdashboard.netlify.app`} date={`July 2020`}>
           Trading Dashboard & Tooling
         </Header>
@@ -34,8 +37,11 @@ function ProjectContainer() {
         </TechStack>
       </Project>
 
-      <Project githubLink={false} left={true}>
-        <Header date={`June 2020`}>Trading Dashboard & Tooling</Header>
+      <Project
+        github={`https://github.com/thescripted/trello_server`}
+        left={true}
+      >
+        <Header date={`June 2020`}>"Trella": A Trello Clone</Header>
         <Image alt="Trella Application" source="Trello.PNG" />
         <Content>
           "Trella" is a simplified, work-in-progress, functional redesign of
@@ -52,7 +58,10 @@ function ProjectContainer() {
         </TechStack>
       </Project>
 
-      <Project githubLink={false} left={true}>
+      <Project
+        github={`https://github.com/thescripted/message-bottle-client`}
+        left={true}
+      >
         <Header link={`http://messagebottle.netlify.app`} date={`May 2020`}>
           Anonymous Message Service
         </Header>

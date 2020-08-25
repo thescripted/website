@@ -5,6 +5,8 @@ import Head from "next/head"
 import ReactMarkdown from "react-markdown"
 import CodeBlock from "@components/CodeBlock"
 import Navigator from "@components/Navigator/Navigator"
+import styles from "./[postname].module.css"
+
 export async function getStaticPaths() {
   const directory = path.join(process.cwd(), "public/posts")
   const postPath = fs.readdirSync(directory).map(url_param => ({
@@ -40,42 +42,21 @@ export default function Post({ content, data }) {
         <meta title="description" content={data.subtitle} />
       </Head>
       <Navigator source="BLOG_POST" />
-      <div className="post">
-        <div className="header">
+      <div className={styles.post}>
+        <div className={styles.header}>
           <h1>{data.title}</h1>
           <h2 style={{ opacity: 0.7 }}>{data.subtitle}</h2>
           <p style={{ opacity: 0.7 }}>{data.date}</p>
         </div>
-        <div className="content">
+        <div className={styles.content}>
           <ReactMarkdown
             source={content}
             escapeHtml={false}
-            className="blog_content" // TODO: Does not work with JSX, maybe modules???\
+            className={styles.blog_content} // TODO: Does not work with JSX, maybe modules???\
             renderers={{ code: CodeBlock }}
           />
         </div>
       </div>
-      <style jsx>{`
-        .post {
-          max-width: 750px;
-          margin: auto;
-        }
-        .header {
-          margin: 35px 0;
-        }
-        .header h1 {
-          font-size: 48px;
-          margin: 0.4em 0;
-        }
-        .content {
-          width: 650px;
-          margin: auto;
-          font-size: 18px;
-          line-height: 1.8em;
-          display: flex;
-          flex-direction: column;
-        }
-      `}</style>
     </>
   )
 }
