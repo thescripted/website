@@ -458,10 +458,6 @@ button {
     align-items: center;
   }
 
-  .main-navbar > a {
-    padding: 15px;
-  }
-
   .main-navbar > a:not(:last-child) {
     display: none;
   }

@@ -48,9 +48,12 @@ function _navigator(source) {
 
 const Navigator = props => {
   return (
-    <div id="mainNav" className="main-navbar">
-      {_navigator(props.source)}
-    </div>
+    <>
+      <div id="mainNav" className="main-navbar">
+        {_navigator(props.source)}
+      </div>
+      <div className={styles.underline}></div>
+    </>
   )
 }
 
