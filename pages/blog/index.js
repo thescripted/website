@@ -15,11 +15,15 @@ export async function getStaticProps() {
     postname.replace(".md", "")
   )
 
-  const metadata = postsFileNames.map(file => {
-    const metaPath = path.join(process.cwd(), `public/posts/${file}`)
-    const meta = matter(fs.readFileSync(metaPath, "utf-8")).data
-    return meta
-  })
+  const metadata = postsFileNames
+    .map(file => {
+      const metaPath = path.join(process.cwd(), `public/posts/${file}`)
+      const meta = matter(fs.readFileSync(metaPath, "utf-8")).data
+      return meta
+    })
+    .sort(function (a, b) {
+      return new Date(b.date) - new Date(a.date)
+    })
 
   return {
     props: {

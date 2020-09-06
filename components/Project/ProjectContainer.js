@@ -58,10 +58,7 @@ function ProjectContainer() {
         </TechStack>
       </Project>
 
-      <Project
-        github={`https://github.com/thescripted/message-bottle-client`}
-        left={true}
-      >
+      <Project github={`https://github.com/thescripted/message-bottle-client`}>
         <Header link={`http://messagebottle.netlify.app`} date={`May 2020`}>
           Anonymous Message Service
         </Header>
