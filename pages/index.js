@@ -5,6 +5,7 @@ import Hero from "@components/Hero/Hero"
 import ProjectContainer from "@components/Project/ProjectContainer"
 import BlogContainer from "@components/Blog/Blog_MainPage/BlogContainer"
 import Navigator from "@components/Navigator/Navigator"
+import OSSContainer from "@components/OSS/OSSContainer"
 import * as matter from "gray-matter"
 import fs from "fs"
 import path from "path"
@@ -57,6 +58,7 @@ const HomePage = ({ repos, metadata }) => {
       <div className="main-container">
         <Hero repos={repos} />
         <ProjectContainer />
+        <OSSContainer />
         <BlogContainer metadata={metadata} />
         <ContactField />
         <Footer />
