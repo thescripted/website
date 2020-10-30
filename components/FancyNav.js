@@ -12,6 +12,7 @@ export const FancyNav = ({ elementLocation }) => {
   const [active, setActive] = useState({
     Home: true,
     Projects: false,
+    OSS: false,
     Blog: false,
     Contact: false,
   })
@@ -40,6 +41,7 @@ export const FancyNav = ({ elementLocation }) => {
   let triggerState = {
     Home: false,
     Projects: false,
+    OSS: false,
     Blogs: false,
     Contact: false,
   }
@@ -74,6 +76,12 @@ export const FancyNav = ({ elementLocation }) => {
           className={`${styles.item} ${active.Projects ? "active-item" : null}`}
         >
           Projects
+        </a>
+        <a
+          href="#OSS"
+          className={`${styles.item} ${active.OSS ? "active-item" : null}`}
+        >
+          Open Source
         </a>
         <a
           href="#Blogs"

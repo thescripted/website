@@ -11,9 +11,9 @@ function Hero({ repos }) {
     const elementLocation = {
       Home: document.getElementById("Home").getBoundingClientRect(),
       Projects: document.getElementById("Projects").getBoundingClientRect(),
+      OSS: document.getElementById("OSS").getBoundingClientRect(),
       Blogs: document.getElementById("Blogs").getBoundingClientRect(),
       Contact: document.getElementById("Contact").getBoundingClientRect(),
-      // getBoundingClientRect is relative to the viewport. This offset adjusts the correct locations in case the user refreshes the page halfway down.
       offset: window.pageYOffset,
     }
     setLocations(elementLocation)
@@ -26,8 +26,8 @@ function Hero({ repos }) {
         <div className="intro-copytext">
           <h1>Benjamin Kinga</h1>
           <p>
-            I am a JavaScript developer currently building applications with{" "}
-            <b>React</b>, <b>Node</b>, and <b>PostgreSQL</b>.
+            Web Application Developer and Open Source Contributor.
+            Currently Building with <b>React</b>, <b>TypeScript</b>, and <b>Python</b>.
           </p>
           <ContactBar />
           <a href="mailto:bk527@cornell.edu">

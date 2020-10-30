@@ -70,7 +70,7 @@ function ProjectContainer() {
         <Content>
           A web application for trading information and analysis, including
           stock market search, historical price-data, and realtime market
-          movement. Bouilt with React and D3.
+          movement. Built with React and D3.
         </Content>
         <TechStack>
           <TechItem>JavaScript (ES6)</TechItem>
@@ -82,7 +82,7 @@ function ProjectContainer() {
       </Project>
 
 
-      <Project github={`https://github.com/thescripted/message-bottle-client`}>
+      {/* <Project github={`https://github.com/thescripted/message-bottle-client`}>
         <Header link={`http://messagebottle.netlify.app`} date={`May 2020`}>
           Anonymous Message Service
         </Header>
@@ -101,7 +101,7 @@ function ProjectContainer() {
           <TechItem>Mongoose</TechItem>
           <TechItem>Netlify</TechItem>
         </TechStack>
-      </Project>
+      </Project> */}
     </div>
   )
 }

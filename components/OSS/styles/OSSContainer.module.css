@@ -1,4 +1,39 @@
 .container {
     width: 100%;
-    margin: auto;
+    margin: 12px auto;
+    border: 1px solid lightgreen;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.OSSTitle {
+    margin: 0 0 12px 0;
+}
+
+.blurb {
+    margin-left: clamp(12px, 10%, 50px); 
+    width: 60%;
+}
+
+.listcontainer {
+    padding: 12px;
+    font-size: 24px;
+    background: hsla(150, 90%, 66%, 0.2);
+    border-radius: 3px;
+    margin: 8px 0;
+}
+
+.listcontainer:hover {
+    background: hsla(150, 90%, 66%, 0.5);
+
+}
+
+.listcontainer span {
+    opacity: 0.7;
+    margin-right: 12px;
+}
+
+.listcontainer p {
+    display: inline-block
 }
