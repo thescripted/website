@@ -26,8 +26,7 @@ function Hero({ repos }) {
         <div className="intro-copytext">
           <h1>Benjamin Kinga</h1>
           <p>
-            Web Application Developer and Open Source Contributor.
-            Currently Building with <b>React</b>, <b>TypeScript</b>, and <b>Python</b>.
+            Web Application Developer building with <b>React</b>, <b>TypeScript</b>, and <b>Python</b>.
           </p>
           <ContactBar />
           <a href="mailto:bk527@cornell.edu">

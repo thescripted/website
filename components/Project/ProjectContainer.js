@@ -14,26 +14,50 @@ function ProjectContainer() {
         projectLink={false}
         github={`https://github.com/thescripted/calendo`}
       >
-        <Header link={`http://tradingdashboard.netlify.app`} date={`October 2020`}>
+        <Header link={`http://calendo.netlify.app`} date={`October 2020`}>
             Interactive Calendar Application
+        </Header>
+        <Image
+          link="http://calendo.netlify.app"
+          alt="Calendo"
+          source="CalendoGif.gif"
+        />
+        <Content>
+            Event-Driven, highly interactive digital calendar. Calendo demonstrates some of the core
+            features of Google Calendar. Built with React and TypeScript.
+        </Content>
+        <TechStack>
+          <TechItem>TypeScript</TechItem>
+          <TechItem>React</TechItem>
+          <TechItem>Lodash</TechItem>
+          <TechItem>date-fns</TechItem>
+        </TechStack>
+      </Project>
+      <Project
+        projectLink={false}
+        github={`https://github.com/thescripted/Stocko`}
+      >
+        <Header link={`http://tradingdashboard.netlify.app`} date={`July 2020`}>
+          Trading Dashboard & Tooling
         </Header>
         <Image
           link="http://tradingdashboard.netlify.app"
           alt="Trading Analytics"
-          source="TradingAnalytics.PNG"
+          source="TradingGif.gif"
         />
         <Content>
-            Event-Driven, highly interactive digital calendar. Similar to Google Calendar core features.
-            Calendo takes full advantage of React and TypeScript, with the former handling DOM UI 
-            updates and state/event managements with React Context,
-            and the latter handling the architecture and business logic for the application.
+          A web application for trading information and analysis, including
+          stock market search, historical price-data, and realtime market
+          movement. Built with React and D3.
         </Content>
         <TechStack>
-          <TechItem>TypeScript</TechItem>
-          <TechItem>React (v16.3+)</TechItem>
+          <TechItem>JavaScript</TechItem>
+          <TechItem>React</TechItem>
+          <TechItem>Parcel</TechItem>
+          <TechItem>TailwindCSS</TechItem>
+          <TechItem>D3.js</TechItem>
         </TechStack>
       </Project>
-
       <Project
         github={`https://github.com/thescripted/trello_server`}
         left={true}
@@ -45,7 +69,6 @@ function ProjectContainer() {
           Trello.com.
         </Content>
         <TechStack>
-          <TechItem>MobX</TechItem>
           <TechItem>React</TechItem>
           <TechItem>PostgreSQL</TechItem>
           <TechItem>GraphQL</TechItem>
@@ -54,33 +77,6 @@ function ProjectContainer() {
           <TechItem>Urql</TechItem>
         </TechStack>
       </Project>
-
-      <Project
-        projectLink={false}
-        github={`https://github.com/thescripted/trading_dashboard`}
-      >
-        <Header link={`http://tradingdashboard.netlify.app`} date={`July 2020`}>
-          Trading Dashboard & Tooling
-        </Header>
-        <Image
-          link="http://tradingdashboard.netlify.app"
-          alt="Trading Analytics"
-          source="TradingAnalytics.PNG"
-        />
-        <Content>
-          A web application for trading information and analysis, including
-          stock market search, historical price-data, and realtime market
-          movement. Built with React and D3.
-        </Content>
-        <TechStack>
-          <TechItem>JavaScript (ES6)</TechItem>
-          <TechItem>React (v16.3+)</TechItem>
-          <TechItem>Parcel</TechItem>
-          <TechItem>TailwindCSS</TechItem>
-          <TechItem>D3.js</TechItem>
-        </TechStack>
-      </Project>
-
 
       {/* <Project github={`https://github.com/thescripted/message-bottle-client`}>
         <Header link={`http://messagebottle.netlify.app`} date={`May 2020`}>

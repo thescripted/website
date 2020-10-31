@@ -11,26 +11,23 @@ export default function OSSContainer (props) {
                         <h1 className={styles.OSSTitle}>@Pytorch/Ignite</h1>
                         <div className={styles.blurbbox}>
                             <p className={styles.blurb}>
-                            This is an example of some blurb that I'm just going to toss up into you. Enjoy!
-                            Muahahaha...
-                            This is an example of some blurb that I'm just going to toss up into you. Enjoy!
-                            Muahahaha...
-                            This is an example of some blurb that I'm just going to toss up into you. Enjoy!
-                            Muahahaha...
+                                Ignite is a High-level library to help with training and evaluating 
+                                neural networks in PyTorch flexibly and transparently.
+                                My involvement includes adding a new feature to the Engine, and improving type-checking.
                         </p>
                     </div>
                         </div>
                     <div className={styles.copytags}>
                         <ul className={styles.issueList}>
                             <PullRequestItem 
-                                link={`https://www.google.com`} 
-                                issueNum={1343} 
-                                item={`Adding Max-Iters as Optional Args in Run`}
+                                link={`https://github.com/pytorch/ignite/pull/1381`} 
+                                issueNum={1381} 
+                                item={`Adding Max-Iters as an optional args in Engine run`}
                             />
                             <PullRequestItem 
-                                link={`https://www.google.com`} 
-                                issueNum={1343} 
-                                item={`Adding Max-Iters as Optional Args in Run`}
+                                link={`https://github.com/pytorch/ignite/pull/1365`} 
+                                issueNum={1365} 
+                                item={`Added tuple type to mixin.py`}
                             />
                         </ul>
                     </div>
@@ -43,26 +40,22 @@ export default function OSSContainer (props) {
                         <h1 className={styles.OSSTitle}>@SnowpackJS/Snowpack</h1>
                         <div className={styles.blurbbox}>
                             <p className={styles.blurb}>
-                            This is an example of some blurb that I'm just going to toss up into you. Enjoy!
-                            Muahahaha...
-                            This is an example of some blurb that I'm just going to toss up into you. Enjoy!
-                            Muahahaha...
-                            This is an example of some blurb that I'm just going to toss up into you. Enjoy!
-                            Muahahaha...
-                        </p>
+                                Snowpack is a WASM-powered frontend build tool. Fast, lightweight, unbundled ESM.
+                                Here, I've added unit tests with Jest to some of their plugins.
+                            </p>
                     </div>
                         </div>
                     <div className={styles.copytags}>
                         <ul className={styles.issueList}>
                             <PullRequestItem 
-                                link={`https://www.google.com`} 
-                                issueNum={1343} 
-                                item={`Adding Max-Iters as Optional Args in Run`}
+                                link={`https://github.com/snowpackjs/snowpack/pull/1399`} 
+                                issueNum={1399} 
+                                item={`Added test for preloadModules option`}
                             />
                             <PullRequestItem 
-                                link={`https://www.google.com`} 
-                                issueNum={1343} 
-                                item={`Adding Max-Iters as Optional Args in Run`}
+                                link={`https://github.com/snowpackjs/snowpack/pull/1357`} 
+                                issueNum={1357} 
+                                item={`Added Minimal Tests for plugin-postcss`}
                             />
                         </ul>
                     </div>
