@@ -26,7 +26,7 @@ function Hero({ repos }) {
         <div className="intro-copytext">
           <h1>Benjamin Kinga</h1>
           <p>
-            Web Application Developer building with <b>React</b>, <b>TypeScript</b>, and <b>Python</b>.
+            Web Application Developer building with <b>React</b>, <b>TypeScript</b>, and <b>Flask</b>.
           </p>
           <ContactBar />
           <a href="mailto:bk527@cornell.edu">
@@ -35,7 +35,7 @@ function Hero({ repos }) {
         </div>
         <div className="intro-bio">
           <div className="hero-image-wrapper">
-            <img className="hero-image" src="face.jfif" alt="My Photo" />
+            <img className="hero-image" src="PortraitSquare.jpg" alt="My Photo" />
           </div>
           <div className="last-repositories">
             <i style={{ opacity: 0.3 }}>Latest Repository Updated ...</i>
