@@ -14,11 +14,11 @@ function ProjectContainer() {
         projectLink={false}
         github={`https://github.com/thescripted/calendo`}
       >
-        <Header link={`http://calendo.netlify.app`} date={`October 2020`}>
+        <Header link={`http://calendoapp.netlify.app`} date={`October 2020`}>
             Interactive Calendar Application
         </Header>
         <Image
-          link="http://calendo.netlify.app"
+          link="http://calendoapp.netlify.app"
           alt="Calendo"
           source="CalendoGif.gif"
         />
@@ -62,7 +62,7 @@ function ProjectContainer() {
         github={`https://github.com/thescripted/trello_server`}
         left={true}
       >
-        <Header date={`September 2020 - Current`}>"Trella": A Trello Clone</Header>
+        <Header date={`August 2020 - Current`}>"Trella": A Trello Clone</Header>
         <Image alt="Trella Application" source="Trello.PNG" />
         <Content>
           "Trella" is a simplified, work-in-progress, functional redesign of
