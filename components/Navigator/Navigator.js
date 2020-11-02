@@ -3,7 +3,7 @@ import styles from "./styles/Navigator.module.css"
 
 function Resume() {
   return (
-    <a className={styles.resume} href="Benjamin_Kinga__Resume.pdf">
+    <a className={styles.resume} href="Benjamin_Kinga_Resume.pdf">
       <button>Resume</button>
     </a>
   )
