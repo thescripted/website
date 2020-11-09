@@ -12,7 +12,7 @@ function ProjectContainer() {
       <h1 className="header-link">Projects</h1>
       <Project
         projectLink={false}
-        github={`https://github.com/thescripted/calendo`}
+        github={`https://github.com/thescripted/Calendo`}
       >
         <Header link={`http://calendoapp.netlify.app`} date={`October 2020`}>
             Interactive Calendar Application
