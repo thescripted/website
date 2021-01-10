@@ -14,11 +14,11 @@ function ProjectContainer() {
         projectLink={false}
         github={`https://github.com/thescripted/Calendo`}
       >
-        <Header link={`http://calendoapp.netlify.app`} date={`October 2020`}>
+        <Header link={`http://calendo.tech`} date={`October 2020`}>
             Interactive Calendar Application
         </Header>
         <Image
-          link="http://calendoapp.netlify.app"
+          link="http://calendo.tech"
           alt="Calendo"
           source="CalendoGif.gif"
         />
